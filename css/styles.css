@@ -1225,6 +1225,11 @@ textarea.form-control {
   gap: 1rem;
 }
 
+/* Floating Mobile Controls Dock (Fixed at bottom right on mobile/tablet) */
+.floating-controls-dock {
+  display: none; /* Hidden on large devices by default */
+}
+
 /* Floating Action Elements */
 .floating-whatsapp {
   position: fixed;
@@ -1311,6 +1316,29 @@ textarea.form-control {
 
 /* 3. Tablets & Small Laptops (769px - 992px) */
 @media (max-width: 992px) {
+  /* Hide header lang & theme controls on mobile/tablet */
+  .nav-actions .lang-switcher,
+  .nav-actions .theme-toggle {
+    display: none !important;
+  }
+
+  /* Show floating control dock at bottom right */
+  .floating-controls-dock {
+    display: flex !important;
+    position: fixed;
+    bottom: 2rem;
+    right: 5.25rem;
+    z-index: 995;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--card-bg);
+    padding: 0.35rem 0.55rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(10px);
+  }
+
   .mobile-toggle {
     display: flex;
   }
@@ -1345,6 +1373,9 @@ textarea.form-control {
 
 /* 4. Small Tablets & Mobile Phones (481px - 768px) */
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+  }
   .top-bar-info {
     display: none;
   }
@@ -1352,13 +1383,17 @@ textarea.form-control {
     display: flex;
     gap: 0.6rem;
   }
+  .floating-controls-dock {
+    bottom: 4.5rem;
+    right: 4.5rem;
+  }
   .floating-whatsapp {
     bottom: 4.5rem;
     right: 1rem;
   }
   .back-to-top {
     bottom: 4.5rem;
-    right: 5rem;
+    right: 10.5rem;
   }
   .stat-card {
     border-right: none;
@@ -1382,6 +1417,9 @@ textarea.form-control {
 
 /* 5. Mobile Phones (320px - 480px) */
 @media (max-width: 480px) {
+  html, body {
+    overflow-x: hidden !important;
+  }
   .container {
     padding: 0 0.85rem;
   }
@@ -1394,6 +1432,19 @@ textarea.form-control {
   .btn-sm {
     padding: 0.35rem 0.6rem;
     font-size: 0.78rem;
+  }
+  .floating-controls-dock {
+    bottom: 4.5rem;
+    right: 4.25rem;
+    padding: 0.25rem 0.45rem;
+  }
+  .floating-whatsapp {
+    bottom: 4.5rem;
+    right: 0.75rem;
+  }
+  .back-to-top {
+    bottom: 4.5rem;
+    right: 9.75rem;
   }
   .modal-card {
     margin: 0.5rem;
