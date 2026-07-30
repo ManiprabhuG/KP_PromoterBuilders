@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plot Layout Projects in Madurai | Kopuram Promoter & Builders LLP</title>
+  <meta name="description" content="Explore DTCP and RERA approved residential plot layouts in Madurai by Kopuram Promoter and Builders LLP. Ring Road, Narasingam & Panaikulam layouts.">
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-info">
+        <span><i class="fas fa-map-marker-alt text-gold"></i> <span data-i18n="top_location">Anna Nagar, Madurai, TN</span></span>
+        <span><i class="fas fa-phone-alt text-gold"></i> <span data-i18n="top_phone">+91 86818 51548</span></span>
+      </div>
+      <div class="top-bar-ratings">
+        <span><i class="fas fa-star text-gold"></i> <span data-i18n="top_ratings">Google 4.9 ★ (55 Reviews) | Justdial 4.7 ★ (42 Reviews)</span></span>
+        <a href="https://www.instagram.com/kopuram_promoter_builders_llp/" target="_blank" rel="noopener noreferrer" style="color: #E1306C; margin-left: 0.75rem; font-size: 1.1rem; vertical-align: middle;" title="Follow Kopuram Builders on Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <img src="images/logo-icon.png" alt="Kopuram Promoter & Builders LLP Logo">
+        <div class="brand-text">
+          <span class="brand-name" data-i18n="brand_name">KOPURAM</span>
+          <span class="brand-sub" data-i18n="brand_sub">PROMOTER & BUILDERS LLP</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
+        <a href="about.html" class="nav-link" data-i18n="nav_about">About Us</a>
+        <a href="projects.html" class="nav-link active" data-i18n="nav_projects">Projects</a>
+        <a href="testimonials.html" class="nav-link" data-i18n="nav_testimonials">Testimonials</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ta">தமிழ்</button>
+        </div>
+        <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+        <button class="btn btn-primary btn-sm" onclick="openBookingModal()" data-i18n="nav_book_visit">Book Site Visit</button>
+        <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section style="background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: #FFF; padding: 4.5rem 0; text-align: center;">
+    <div class="container" data-aos="fade-up">
+      <span class="badge badge-gold" style="margin-bottom: 0.75rem;">Plot Showcase</span>
+      <h1 style="font-size: 2.75rem; color: #FFF; margin-bottom: 0.5rem;" data-i18n="proj_title">Explore Premium Plot Layouts in Madurai</h1>
+      <p style="color: #E2E8F0; font-size: 1.1rem; max-width: 600px; margin: 0 auto;" data-i18n="proj_desc">Prime locations with immediate house construction suitability, excellent connectivity, and modern amenities.</p>
+    </div>
+  </section>
+
+  <!-- Projects Catalog -->
+  <section class="projects-section" style="background-color: transparent;">
+    <div class="container">
+      
+      <!-- Filter Bar -->
+      <div class="filter-bar" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All Layouts</button>
+        <button class="filter-btn" data-filter="available" data-i18n="filter_available">Available Plots</button>
+        <button class="filter-btn" data-filter="ongoing" data-i18n="filter_ongoing">Ongoing Layouts</button>
+      </div>
+
+      <!-- Grid Container -->
+      <div class="projects-grid" id="projects-grid-container" data-aos="fade-up">
+        <!-- Rendered dynamically via js/main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content" data-aos="zoom-in">
+        <h2 class="cta-title" data-i18n="cta_title">Ready to Own Your Dream Plot in Madurai?</h2>
+        <p class="cta-desc" data-i18n="cta_desc">Schedule a free site visit with our experienced team today.</p>
+        <button class="btn btn-secondary btn-lg" onclick="openBookingModal()">
+          <i class="fas fa-calendar-check"></i> <span data-i18n="cta_btn">Book Free Site Visit Now</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <div class="footer-logo-badge">
+              <img src="images/logo-icon.png" alt="Kopuram Logo">
+            </div>
+            <div class="footer-brand-text">
+              <span class="footer-brand-name" data-i18n="brand_name">KOPURAM</span>
+              <span class="footer-brand-sub" data-i18n="brand_sub">PROMOTER & BUILDERS LLP</span>
+            </div>
+          </div>
+          <p data-i18n="footer_tagline">Kopuram Promoter and Builders LLP - 20+ Years of Excellence in Land Development in Madurai.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/kopuram_promoter_builders_llp/" target="_blank" rel="noopener noreferrer" class="social-icon-btn instagram" title="Follow us on Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/918681851548" target="_blank" rel="noopener noreferrer" class="social-icon-btn whatsapp" title="Chat on WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="tel:+918681851548" class="social-icon-btn" title="Call Us">
+              <i class="fas fa-phone-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_quick_links">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
+            <li><a href="projects.html" data-i18n="nav_projects">Projects</a></li>
+            <li><a href="testimonials.html" data-i18n="nav_testimonials">Testimonials</a></li>
+            <li><a href="contact.html" data-i18n="nav_contact">Contact Us</a></li>
+            <li><a href="terms.html" data-i18n="nav_terms">Terms & Conditions</a></li>
+            <li><a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_contact_info">Office Contact</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> <span>Anna Nagar, Madurai, Tamil Nadu, India</span></li>
+            <li><i class="fas fa-phone-alt"></i> <span>+91 86818 51548</span></li>
+            <li><i class="fas fa-envelope"></i> <span>info@kopurambuilders.com</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_rights">© 2026 Kopuram Promoter and Builders LLP. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/918681851548" target="_blank" class="floating-whatsapp"><i class="fab fa-whatsapp"></i></a>
+  <button class="back-to-top" id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/projects-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
