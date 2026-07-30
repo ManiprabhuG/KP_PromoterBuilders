@@ -1269,4 +1269,18 @@ textarea.form-control {
   .navbar .nav-actions .btn-primary {
     display: none !important;
   }
+
+  .mobile-call-bar {
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    padding: 0.75rem 1rem;
+    z-index: 980;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+  }
 }
