@@ -1264,7 +1264,7 @@ textarea.form-control {
 }
 
 /* Hide navbar language switcher & Book Site Visit button on small screens <= 430px */
-@media (max-width: 430px) {
+@media screen and (max-width: 430px) {
   .navbar .lang-switcher,
   .navbar .nav-actions .btn-primary {
     display: none !important;
