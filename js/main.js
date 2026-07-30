@@ -104,13 +104,14 @@ function initNavigation() {
   const navMenu = document.querySelector('.nav-menu');
 
   if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       navMenu.classList.toggle('active');
+      const isExpanded = navMenu.classList.contains('active');
+      mobileToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
       const icon = mobileToggle.querySelector('i');
-      if (navMenu.classList.contains('active')) {
-        icon.className = 'fas fa-times';
-      } else {
-        icon.className = 'fas fa-bars';
+      if (icon) {
+        icon.className = isExpanded ? 'fas fa-times' : 'fas fa-bars';
       }
     });
   }
@@ -120,7 +121,8 @@ function initNavigation() {
     link.addEventListener('click', () => {
       if (navMenu && navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
-        const icon = mobileToggle.querySelector('i');
+        if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+        const icon = mobileToggle ? mobileToggle.querySelector('i') : null;
         if (icon) icon.className = 'fas fa-bars';
       }
     });
@@ -131,7 +133,8 @@ function initNavigation() {
     if (navMenu && navMenu.classList.contains('active')) {
       if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
         navMenu.classList.remove('active');
-        const icon = mobileToggle.querySelector('i');
+        if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+        const icon = mobileToggle ? mobileToggle.querySelector('i') : null;
         if (icon) icon.className = 'fas fa-bars';
       }
     }

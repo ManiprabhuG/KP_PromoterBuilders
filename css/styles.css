@@ -1,8 +1,6 @@
 /* 
-  Kopuram Promoter & Builders LLP - Custom Design System & Stylesheet
-  Primary: Deep Burgundy (#7A0C2E)
-  Secondary/Accent: Warm Gold (#D4AF37)
-  Typography: Poppins (Headings), Inter (Body), Noto Sans Tamil (Tamil text)
+  Kopuram Promoter & Builders LLP - Responsive Design System
+  Optimized across 320px, 375px, 480px, 768px, 1024px, 1366px, 1920px+
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
@@ -63,7 +61,7 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  font-size: 15px; /* Slightly scaled down base size for compact, elegant proportion */
+  font-size: clamp(14px, 0.9vw + 10px, 15px); /* Fluid base font size */
 }
 
 body {
@@ -72,18 +70,39 @@ body {
   background-color: var(--light-bg);
   line-height: 1.6;
   transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Tamil Typography Optimization */
+/* Tamil Typography & Word Wrap Safety */
 html[lang="ta"] h1, 
 html[lang="ta"] h2, 
 html[lang="ta"] h3, 
 html[lang="ta"] h4, 
 html[lang="ta"] p, 
 html[lang="ta"] span,
-html[lang="ta"] a {
+html[lang="ta"] a,
+html[lang="ta"] button {
   word-break: break-word;
   overflow-wrap: break-word;
+}
+
+/* Fluid Typography with clamp() */
+h1 {
+  font-size: clamp(1.85rem, 4vw + 0.8rem, 2.85rem);
+}
+
+h2 {
+  font-size: clamp(1.45rem, 2.5vw + 0.75rem, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 1.8vw + 0.6rem, 1.45rem);
+}
+
+h4 {
+  font-size: clamp(1rem, 1.2vw + 0.5rem, 1.15rem);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -109,24 +128,25 @@ ul {
   list-style: none;
 }
 
-/* Container (Scaled to 1140px for balanced desktop proportions) */
+/* Container System (Fluid clamp 320px to 1140px) */
 .container {
   width: 100%;
-  max-width: 1140px;
+  max-width: clamp(320px, 92vw, 1140px);
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 clamp(0.85rem, 2vw, 1.25rem);
   box-sizing: border-box;
 }
 
-/* Buttons */
+/* Buttons (Touch Target Minimum 44x44px for Accessibility) */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  min-height: 44px;
+  padding: 0.65rem 1.4rem;
   font-family: var(--font-heading);
-  font-size: 0.9rem;
+  font-size: clamp(0.85rem, 1vw + 0.5rem, 0.92rem);
   font-weight: 600;
   border-radius: var(--radius-md);
   border: 2px solid transparent;
@@ -186,12 +206,14 @@ ul {
 }
 
 .btn-sm {
-  padding: 0.45rem 0.9rem;
+  min-height: 38px;
+  padding: 0.4rem 0.85rem;
   font-size: 0.82rem;
 }
 
 .btn-lg {
-  padding: 0.95rem 2rem;
+  min-height: 48px;
+  padding: 0.85rem 1.85rem;
   font-size: 0.98rem;
 }
 
@@ -234,7 +256,7 @@ ul {
 .top-bar {
   background-color: var(--primary-dark);
   color: #FFFFFF;
-  font-size: 0.82rem;
+  font-size: clamp(0.75rem, 0.8vw + 0.4rem, 0.82rem);
   padding: 0.4rem 0;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
@@ -321,7 +343,7 @@ ul {
 .brand-name {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: clamp(0.95rem, 1.2vw + 0.6rem, 1.15rem);
   letter-spacing: 0.5px;
   color: var(--primary);
   text-transform: uppercase;
@@ -407,6 +429,7 @@ html[lang="ta"] .nav-link {
 }
 
 .lang-btn {
+  min-height: 32px;
   padding: 0.2rem 0.55rem;
   border-radius: var(--radius-full);
   font-size: 0.75rem;
@@ -425,10 +448,10 @@ html[lang="ta"] .nav-link {
   box-shadow: var(--shadow-sm);
 }
 
-/* Theme Toggle */
+/* Theme Toggle (Min 44x44px Touch Target) */
 .theme-toggle {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid var(--border-color);
   background: var(--card-bg);
@@ -446,9 +469,11 @@ html[lang="ta"] .nav-link {
   color: var(--secondary-dark);
 }
 
-/* Mobile Toggle */
+/* Mobile Toggle (Min 44x44px Touch Target) */
 .mobile-toggle {
   display: none;
+  min-width: 44px;
+  min-height: 44px;
   font-size: 1.35rem;
   background: none;
   border: none;
@@ -456,18 +481,20 @@ html[lang="ta"] .nav-link {
   cursor: pointer;
   flex-shrink: 0;
   padding: 0.25rem;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Hero Section */
 .hero {
   position: relative;
-  min-height: 75vh;
+  min-height: clamp(55vh, 75vh, 85vh);
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, rgba(10, 13, 16, 0.82) 0%, rgba(122, 12, 46, 0.75) 100%),
               url('../images/hero_bg.jpg') center/cover no-repeat;
   color: #FFFFFF;
-  padding: 4.5rem 0;
+  padding: clamp(3rem, 6vw, 4.5rem) 0;
   overflow: hidden;
 }
 
@@ -494,13 +521,12 @@ html[lang="ta"] .nav-link {
   border: 1px solid rgba(212, 175, 55, 0.5);
   border-radius: var(--radius-full);
   color: var(--secondary-light);
-  font-size: 0.85rem;
+  font-size: clamp(0.78rem, 0.8vw + 0.4rem, 0.85rem);
   font-weight: 600;
   margin-bottom: 1.25rem;
 }
 
 .hero-title {
-  font-size: 2.85rem;
   font-weight: 800;
   color: #FFFFFF;
   margin-bottom: 1rem;
@@ -514,7 +540,7 @@ html[lang="ta"] .nav-link {
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 1.2vw + 0.6rem, 1.1rem);
   color: #E2E8F0;
   margin-bottom: 2rem;
   font-weight: 400;
@@ -540,7 +566,7 @@ html[lang="ta"] .nav-link {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1rem;
   text-align: center;
 }
@@ -555,7 +581,7 @@ html[lang="ta"] .nav-link {
 }
 
 .stat-number {
-  font-size: 2.1rem;
+  font-size: clamp(1.6rem, 2.5vw + 0.8rem, 2.1rem);
   font-weight: 800;
   color: var(--primary);
   font-family: var(--font-heading);
@@ -573,7 +599,7 @@ html[lang="ta"] .nav-link {
 .section-header {
   text-align: center;
   max-width: 600px;
-  margin: 0 auto 2.75rem auto;
+  margin: 0 auto clamp(2rem, 4vw, 2.75rem) auto;
 }
 
 .section-subtitle {
@@ -587,7 +613,6 @@ html[lang="ta"] .nav-link {
 }
 
 .section-title {
-  font-size: 2rem;
   color: var(--text-main);
   margin-bottom: 0.75rem;
 }
@@ -599,12 +624,12 @@ html[lang="ta"] .nav-link {
 
 /* Feature Grid / Why Choose Us */
 .features-section {
-  padding: 4.5rem 0;
+  padding: clamp(3rem, 5vw, 4.5rem) 0;
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.75rem;
 }
 
@@ -616,6 +641,8 @@ html[lang="ta"] .nav-link {
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .feature-card::before {
@@ -670,7 +697,7 @@ html[lang="ta"] .nav-link {
 
 /* Projects Section & Filter */
 .projects-section {
-  padding: 4.5rem 0;
+  padding: clamp(3rem, 5vw, 4.5rem) 0;
   background-color: rgba(122, 12, 46, 0.02);
 }
 
@@ -683,6 +710,7 @@ html[lang="ta"] .nav-link {
 }
 
 .filter-btn {
+  min-height: 44px;
   padding: 0.5rem 1.2rem;
   border-radius: var(--radius-full);
   border: 1px solid var(--border-color);
@@ -692,6 +720,9 @@ html[lang="ta"] .nav-link {
   font-size: 0.85rem;
   cursor: pointer;
   transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .filter-btn.active, .filter-btn:hover {
@@ -703,7 +734,7 @@ html[lang="ta"] .nav-link {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -716,6 +747,7 @@ html[lang="ta"] .nav-link {
   transition: var(--transition);
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .project-card:hover {
@@ -804,11 +836,12 @@ html[lang="ta"] .nav-link {
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 /* Testimonial Slider */
 .testimonials-section {
-  padding: 4.5rem 0;
+  padding: clamp(3rem, 5vw, 4.5rem) 0;
 }
 
 .rating-summary-box {
@@ -902,7 +935,7 @@ html[lang="ta"] .nav-link {
 .cta-banner {
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
   color: #FFFFFF;
-  padding: 4rem 0;
+  padding: clamp(3rem, 5vw, 4rem) 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -924,13 +957,12 @@ html[lang="ta"] .nav-link {
 
 .cta-title {
   color: #FFFFFF;
-  font-size: 2.1rem;
   margin-bottom: 0.85rem;
 }
 
 .cta-desc {
   color: #F1F5F9;
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 1.2vw + 0.6rem, 1.05rem);
   margin-bottom: 1.75rem;
 }
 
@@ -949,6 +981,7 @@ html[lang="ta"] .nav-link {
 
 .form-control {
   width: 100%;
+  min-height: 44px;
   padding: 0.7rem 0.85rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-color);
@@ -957,6 +990,7 @@ html[lang="ta"] .nav-link {
   font-family: var(--font-body);
   font-size: 0.9rem;
   transition: var(--transition);
+  box-sizing: border-box;
 }
 
 .form-control:focus {
@@ -970,7 +1004,7 @@ textarea.form-control {
   min-height: 110px;
 }
 
-/* Modals */
+/* Modals (Responsive Full-screen on Mobile <= 576px) */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -1018,11 +1052,16 @@ textarea.form-control {
 }
 
 .modal-close {
+  min-width: 44px;
+  min-height: 44px;
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--text-muted);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-body {
@@ -1035,6 +1074,7 @@ textarea.form-control {
   color: #94A3B8;
   padding: 4rem 0 2rem 0;
   font-size: 0.88rem;
+  margin-top: auto;
 }
 
 .footer-brand {
@@ -1143,15 +1183,15 @@ textarea.form-control {
 }
 
 .social-icon-btn {
-  width: 35px;
-  height: 35px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
   color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
   transition: var(--transition);
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
@@ -1185,7 +1225,7 @@ textarea.form-control {
   gap: 1rem;
 }
 
-/* Floating Elements */
+/* Floating Action Elements */
 .floating-whatsapp {
   position: fixed;
   bottom: 2rem;
@@ -1212,21 +1252,22 @@ textarea.form-control {
   position: fixed;
   bottom: 2rem;
   right: 5.75rem;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   background-color: var(--primary);
   color: #FFFFFF;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
   box-shadow: var(--shadow-md);
   z-index: 990;
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
   transition: var(--transition);
+  border: none;
 }
 
 .back-to-top.visible {
@@ -1247,16 +1288,34 @@ textarea.form-control {
   box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
 }
 
-/* Mobile & Tablet Responsive Navigation Drawer Fix */
-@media (max-width: 992px) {
-  .hero-title {
-    font-size: 2.2rem;
+/* ====================================================
+   DEVICE RESPONSIVE BREAKPOINTS (320px - 2560px+)
+   ==================================================== */
+
+/* 1. Ultra-wide Desktops & 4K (1600px - 2560px+) */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1280px;
   }
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 2. Standard Laptops & Desktops (993px - 1440px) */
+@media (min-width: 993px) and (max-width: 1440px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 3. Tablets & Small Laptops (769px - 992px) */
+@media (max-width: 992px) {
   .mobile-toggle {
-    display: block;
+    display: flex;
   }
   .brand-sub {
-    display: none; /* Hide secondary sub-slogan on mobile so header elements fit without pushing screen */
+    display: none;
   }
   .nav-menu {
     position: fixed;
@@ -1279,14 +1338,15 @@ textarea.form-control {
   .nav-menu.active {
     left: 0;
   }
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+/* 4. Small Tablets & Mobile Phones (481px - 768px) */
 @media (max-width: 768px) {
   .top-bar-info {
     display: none;
-  }
-  .hero-title {
-    font-size: 1.95rem;
   }
   .mobile-call-bar {
     display: flex;
@@ -1307,5 +1367,72 @@ textarea.form-control {
   }
   .stat-card:last-child {
     border-bottom: none;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-btns .btn {
+    width: 100%;
+  }
+}
+
+/* 5. Mobile Phones (320px - 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.85rem;
+  }
+  .brand-name {
+    font-size: 0.95rem;
+  }
+  .nav-actions {
+    gap: 0.35rem;
+  }
+  .btn-sm {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.78rem;
+  }
+  .modal-card {
+    margin: 0.5rem;
+    max-height: 95vh;
+    border-radius: var(--radius-sm);
+  }
+  .modal-body {
+    padding: 1rem;
+  }
+}
+
+/* ====================================================
+   PRINT STYLESHEET (@media print)
+   ==================================================== */
+@media print {
+  .top-bar,
+  .navbar,
+  .floating-whatsapp,
+  .back-to-top,
+  .mobile-call-bar,
+  .cta-banner,
+  .modal-backdrop {
+    display: none !important;
+  }
+  
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    font-size: 12pt;
+  }
+  
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  
+  .project-card, .feature-card {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #CCC !important;
   }
 }
