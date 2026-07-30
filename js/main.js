@@ -21,24 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
 let currentLang = localStorage.getItem('kp_lang') || 'en';
 
 function initLanguage() {
-  // Modal Triggers
-  document.querySelectorAll('.open-visit-modal').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openBookingModal();
-    });
-  });
-
   setLanguage(currentLang);
 
-  // Language Switcher Handlers (Both Desktop Buttons & Mobile Text Links)
-  const langBtns = document.querySelectorAll('.lang-btn, .drawer-lang-link');
+  const langBtns = document.querySelectorAll('.lang-btn');
   langBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const lang = btn.getAttribute('data-lang');
-      if (lang) {
-        setLanguage(lang);
+      const selected = e.target.getAttribute('data-lang');
+      if (selected && selected !== currentLang) {
+        setLanguage(selected);
       }
     });
   });
@@ -79,40 +69,31 @@ function setLanguage(lang) {
  * Theme Engine (Light / Dark)
  * ---------------------------------------------------- */
 function initTheme() {
-function setThemeMode(mode) {
-  document.documentElement.setAttribute('data-theme', mode);
-  localStorage.setItem('kp_theme', mode);
-  
-  // Update desktop circular toggle icons
-  const themeIcons = document.querySelectorAll('.theme-toggle i');
-  themeIcons.forEach(icon => {
-    if (mode === 'dark') {
+  const savedTheme = localStorage.getItem('kp_theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateThemeIcon(savedTheme);
+
+  const toggleBtns = document.querySelectorAll('.theme-toggle');
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const activeTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('kp_theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+  });
+}
+
+function updateThemeIcon(theme) {
+  const icons = document.querySelectorAll('.theme-toggle i');
+  icons.forEach(icon => {
+    if (theme === 'dark') {
       icon.className = 'fas fa-sun';
     } else {
       icon.className = 'fas fa-moon';
     }
   });
-
-  // Update mobile drawer text links active states
-  const drawerThemeLinks = document.querySelectorAll('.drawer-theme-link');
-  drawerThemeLinks.forEach(link => {
-    if (link.getAttribute('data-theme-set') === mode) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-}
-
-function toggleTheme() {
-  const current = document.documentElement.getAttribute('data-theme') || 'light';
-  const next = current === 'dark' ? 'light' : 'dark';
-  setThemeMode(next);
-}
-
-function initTheme() {
-  const savedTheme = localStorage.getItem('kp_theme') || 'light';
-  setThemeMode(savedTheme);
 }
 
 /* ----------------------------------------------------
@@ -123,14 +104,13 @@ function initNavigation() {
   const navMenu = document.querySelector('.nav-menu');
 
   if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
+    mobileToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
-      const isExpanded = navMenu.classList.contains('active');
-      mobileToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
       const icon = mobileToggle.querySelector('i');
-      if (icon) {
-        icon.className = isExpanded ? 'fas fa-times' : 'fas fa-bars';
+      if (navMenu.classList.contains('active')) {
+        icon.className = 'fas fa-times';
+      } else {
+        icon.className = 'fas fa-bars';
       }
     });
   }
@@ -140,23 +120,10 @@ function initNavigation() {
     link.addEventListener('click', () => {
       if (navMenu && navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
-        if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
-        const icon = mobileToggle ? mobileToggle.querySelector('i') : null;
+        const icon = mobileToggle.querySelector('i');
         if (icon) icon.className = 'fas fa-bars';
       }
     });
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (navMenu && navMenu.classList.contains('active')) {
-      if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
-        navMenu.classList.remove('active');
-        if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
-        const icon = mobileToggle ? mobileToggle.querySelector('i') : null;
-        if (icon) icon.className = 'fas fa-bars';
-      }
-    }
   });
 }
 
