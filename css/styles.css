@@ -417,11 +417,6 @@ html[lang="ta"] .brand-sub {
   flex-shrink: 0;
 }
 
-/* Mobile Drawer Settings Block (STRICTLY HIDDEN ON DESKTOP > 992px) */
-.mobile-drawer-settings {
-  display: none !important;
-}
-
 /* Language Switcher */
 .lang-switcher {
   display: flex;
@@ -1296,9 +1291,29 @@ textarea.form-control {
   gap: 0.5rem;
 }
 
+/* Floating controls dock - legacy cleanup */
+.floating-controls-dock {
+  display: none !important;
+}
+
 /* ====================================================
    DEVICE RESPONSIVE BREAKPOINTS (320px - 2560px+)
    ==================================================== */
+
+/* Desktop (> 992px): STRICTLY HIDE mobile-drawer-settings to prevent duplicate controls */
+@media (min-width: 993px) {
+  .mobile-drawer-settings,
+  .mobile-drawer-settings * {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
 
 /* Mid & Large Devices (> 768px): UNHIDE "Book Site Visit" button in Header */
 @media (min-width: 769px) {
@@ -1347,7 +1362,7 @@ textarea.form-control {
     display: none !important;
   }
 
-  /* Hide lang-switcher & theme-toggle from top header on <= 992px */
+  /* Hide lang-switcher & theme-toggle from top header bar on <= 992px */
   .nav-actions .lang-switcher,
   .nav-actions .theme-toggle {
     display: none !important;
@@ -1396,6 +1411,16 @@ textarea.form-control {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--border-color);
+    visibility: visible !important;
+    height: auto !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .mobile-drawer-settings * {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
   }
 
   .drawer-setting-item {
