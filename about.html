@@ -32,34 +32,44 @@
   <div class="top-bar">
     <div class="container top-bar-content">
       <div class="top-bar-info">
-        <span><i class="fas fa-map-marker-alt text-gold"></i> <span data-i18n="top_location">Anna Nagar, Madurai, TN</span></span>
-        <span><i class="fas fa-phone-alt text-gold"></i> <span data-i18n="top_phone">+91 86818 51548</span></span>
+        <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="top_location">Anna Nagar, Madurai, TN</span></span>
+        <span><i class="fas fa-phone-alt"></i> <a href="tel:+918681851548">+91 86818 51548</a></span>
+        <span><i class="far fa-clock"></i> <span data-i18n="top_hours">Mon - Sat: 10:00 AM - 7:00 PM</span></span>
       </div>
       <div class="top-bar-ratings">
-        <span><i class="fas fa-star text-gold"></i> <span data-i18n="top_ratings">Google 4.9 ★ (55 Reviews) | Justdial 4.7 ★ (42 Reviews)</span></span>
-        <a href="https://www.instagram.com/kopuram_promoter_builders_llp/" target="_blank" rel="noopener noreferrer" style="color: #E1306C; margin-left: 0.75rem; font-size: 1.1rem; vertical-align: middle;" title="Follow Kopuram Builders on Instagram"><i class="fab fa-instagram"></i></a>
+        <span><i class="fas fa-star text-gold"></i> Google 4.9 ★ (55 Reviews)</span>
+        <span>|</span>
+        <span>Justdial 4.7 ★ (42 Reviews)</span>
+        <span>|</span>
+        <a href="https://www.instagram.com/kopuram_promoter_builders_llp/" target="_blank" rel="noopener noreferrer" class="top-social-link" title="Instagram Profile">
+          <i class="fab fa-instagram"></i>
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- Header / Navigation -->
+  <!-- Header Navigation Bar -->
   <header class="navbar">
     <div class="container navbar-container">
       <a href="index.html" class="brand-logo">
-        <img src="images/logo-icon.png" alt="Kopuram Promoter & Builders LLP Logo" width="48" height="48">
+        <img src="images/logo-icon.png" alt="Kopuram Promoter & Builders Emblem">
         <div class="brand-text">
-          <span class="brand-name" data-i18n="brand_name">KOPURAM</span>
-          <span class="brand-sub" data-i18n="brand_sub">PROMOTER & BUILDERS LLP</span>
+          <span class="brand-name">KOPURAM</span>
+          <span class="brand-sub">PROMOTER & BUILDERS LLP</span>
         </div>
       </a>
 
-      <nav class="nav-menu">
-        <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
-        <a href="about.html" class="nav-link active" data-i18n="nav_about">About Us</a>
-        <a href="projects.html" class="nav-link" data-i18n="nav_projects">Projects</a>
-        <a href="testimonials.html" class="nav-link" data-i18n="nav_testimonials">Testimonials</a>
-        <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a>
+      <!-- Semantic Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link active" data-i18n="nav_about">About Us</a></li>
+          <li class="nav-item"><a href="projects.html" class="nav-link" data-i18n="nav_projects">Projects</a></li>
+          <li class="nav-item"><a href="testimonials.html" class="nav-link" data-i18n="nav_testimonials">Testimonials</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+        </ul>
 
+        <!-- Mobile Drawer Preferences (Inside Hamburger Menu on Mobile) -->
         <div class="mobile-drawer-settings">
           <div class="drawer-setting-item">
             <span class="setting-label" data-i18n="nav_lang">Language</span>
@@ -69,23 +79,33 @@
             </div>
           </div>
           <div class="drawer-setting-item">
-            <span class="setting-label" data-i18n="nav_theme">Theme / Mode</span>
-            <button class="theme-toggle" title="Toggle Theme">
+            <span class="setting-label" data-i18n="nav_theme">Appearance</span>
+            <button class="theme-toggle" aria-label="Toggle Light and Dark Theme" title="Toggle Theme">
               <i class="fas fa-moon"></i>
             </button>
           </div>
+          <button class="btn btn-primary btn-mobile-book open-visit-modal" data-i18n="nav_book_visit">Book Site Visit</button>
         </div>
       </nav>
 
+      <!-- Desktop Action Controls -->
       <div class="nav-actions">
-        <div class="lang-switcher">
+        <div class="lang-switcher" title="Switch Language">
           <button class="lang-btn active" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="ta">தமிழ்</button>
         </div>
-        <button class="theme-toggle"><i class="fas fa-moon"></i></button>
-        <button class="btn btn-primary btn-sm" onclick="openBookingModal()" data-i18n="nav_book_visit">Book Site Visit</button>
-        <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+
+        <button class="theme-toggle" aria-label="Toggle Light and Dark Theme" title="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+
+        <button class="btn btn-primary open-visit-modal" data-i18n="nav_book_visit">Book Site Visit</button>
       </div>
+
+      <!-- Mobile Toggle -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </header>
 

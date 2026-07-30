@@ -21,6 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
 let currentLang = localStorage.getItem('kp_lang') || 'en';
 
 function initLanguage() {
+  // Modal Triggers
+  document.querySelectorAll('.open-visit-modal').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openBookingModal();
+    });
+  });
+
   setLanguage(currentLang);
 
   const langBtns = document.querySelectorAll('.lang-btn');
