@@ -1,6 +1,5 @@
 /* 
-  Kopuram Promoter & Builders LLP - Bulletproof Mobile Responsive Stylesheet
-  Optimized for Oppo, Samsung, iPhone, Vivo, Redmi & All Mobile Viewports
+  Kopuram Promoter & Builders LLP - Clean Desktop & Mobile Navigation System
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
@@ -49,7 +48,7 @@
   --border-color: #334155;
 }
 
-/* Global Reset & Strict Zero Horizontal Overflow */
+/* Global Reset & Zero Horizontal Overflow */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -418,6 +417,11 @@ html[lang="ta"] .brand-sub {
   flex-shrink: 0;
 }
 
+/* Mobile Drawer Settings Block (STRICTLY HIDDEN ON DESKTOP > 992px) */
+.mobile-drawer-settings {
+  display: none !important;
+}
+
 /* Language Switcher */
 .lang-switcher {
   display: flex;
@@ -471,7 +475,7 @@ html[lang="ta"] .brand-sub {
   color: var(--secondary-dark);
 }
 
-/* Mobile Toggle */
+/* Mobile Toggle Icon */
 .mobile-toggle {
   display: none;
   min-width: 44px;
@@ -1227,12 +1231,7 @@ textarea.form-control {
   gap: 1rem;
 }
 
-/* Floating Mobile Controls Dock */
-.floating-controls-dock {
-  display: none;
-}
-
-/* Floating Action Buttons */
+/* Floating Elements */
 .floating-whatsapp {
   position: fixed;
   bottom: 2rem;
@@ -1282,11 +1281,6 @@ textarea.form-control {
   visibility: visible;
 }
 
-/* Mobile Drawer Settings Block (Hidden on Desktop) */
-.mobile-drawer-settings {
-  display: none;
-}
-
 .mobile-call-bar {
   display: none;
   position: fixed;
@@ -1305,6 +1299,13 @@ textarea.form-control {
 /* ====================================================
    DEVICE RESPONSIVE BREAKPOINTS (320px - 2560px+)
    ==================================================== */
+
+/* Mid & Large Devices (> 768px): UNHIDE "Book Site Visit" button in Header */
+@media (min-width: 769px) {
+  .nav-actions .btn-primary {
+    display: inline-flex !important;
+  }
+}
 
 /* 1. Ultra-wide Desktops & 4K (1600px - 2560px+) */
 @media (min-width: 1600px) {
@@ -1346,14 +1347,9 @@ textarea.form-control {
     display: none !important;
   }
 
-  /* Hide header controls from top header bar */
+  /* Hide lang-switcher & theme-toggle from top header on <= 992px */
   .nav-actions .lang-switcher,
-  .nav-actions .theme-toggle,
-  .nav-actions .btn-primary {
-    display: none !important;
-  }
-
-  .floating-controls-dock {
+  .nav-actions .theme-toggle {
     display: none !important;
   }
 
@@ -1428,6 +1424,11 @@ textarea.form-control {
     overflow-x: hidden !important;
   }
 
+  /* HIDE "Book Site Visit" button from top navbar header on small devices */
+  .nav-actions .btn-primary {
+    display: none !important;
+  }
+
   .mobile-call-bar {
     display: flex !important;
     flex-wrap: wrap !important;
@@ -1491,20 +1492,14 @@ textarea.form-control {
     font-size: 0.95rem;
   }
 
-  .floating-controls-dock {
-    bottom: 4.5rem;
-    right: 4.25rem;
-    padding: 0.25rem 0.45rem;
-  }
-
   .floating-whatsapp {
-    bottom: 4.5rem;
+    bottom: 5.5rem;
     right: 0.75rem;
   }
 
   .back-to-top {
-    bottom: 4.5rem;
-    right: 9.75rem;
+    bottom: 5.5rem;
+    right: 4.75rem;
   }
 
   .modal-card {
