@@ -1,5 +1,5 @@
 /* 
-  Kopuram Promoter & Builders LLP - Enterprise Real Estate Navigation & Layout Design
+  Kopuram Promoter & Builders LLP - Clean Desktop & Mobile Navigation System
   Strictly Compliant with navbar.md Specifications
 */
 
@@ -49,7 +49,7 @@
   --border-color: #334155;
 }
 
-/* Global Reset & Viewport Constraints */
+/* Global Reset */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -235,7 +235,7 @@ ul {
 }
 
 /* ====================================================
-   TOP INFORMATION BAR (Strictly No Duplicate Language Switcher)
+   TOP INFORMATION BAR (Strictly No Language Switcher in Top Bar)
    ==================================================== */
 .top-bar {
   background-color: var(--primary-dark);
@@ -294,7 +294,7 @@ ul {
 }
 
 /* ====================================================
-   MAIN NAVBAR HEADER (Centered Alignment & Single Controls)
+   MAIN HEADER NAVBAR
    ==================================================== */
 .navbar {
   position: sticky;
@@ -320,7 +320,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   height: 76px;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
 }
 
@@ -329,7 +329,6 @@ ul {
   align-items: center;
   gap: 0.65rem;
   flex-shrink: 0;
-  min-width: 0;
 }
 
 .brand-logo img {
@@ -366,16 +365,18 @@ ul {
   margin-top: 1px;
 }
 
-/* Center: Semantic Navigation Menu */
+/* Nav Menu & List */
 .nav-menu {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  flex-direction: row;
+  gap: 1.75rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -417,15 +418,7 @@ ul {
   width: 100%;
 }
 
-/* Right: Actions (Desktop Only) */
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  flex-shrink: 0;
-}
-
-/* Single Language Switcher */
+/* Language Switcher */
 .lang-switcher {
   display: flex;
   align-items: center;
@@ -457,7 +450,7 @@ ul {
   box-shadow: var(--shadow-sm);
 }
 
-/* Single Theme Toggle */
+/* Theme Toggle */
 .theme-toggle {
   width: 42px;
   height: 42px;
@@ -480,12 +473,15 @@ ul {
   transform: rotate(15deg);
 }
 
-/* Mobile Drawer Settings (Strictly Hidden on Desktop > 992px) */
-.mobile-drawer-settings {
-  display: none !important;
+/* Desktop Action Controls */
+.desktop-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-shrink: 0;
 }
 
-/* Mobile Toggle Hamburger Icon */
+/* Mobile Toggle Icon */
 .mobile-toggle {
   display: none;
   min-width: 44px;
@@ -502,8 +498,167 @@ ul {
 }
 
 /* ====================================================
-   HERO SECTION & SECTIONS
+   DESKTOP vs MOBILE SPECIFIC CONTROLS
    ==================================================== */
+
+/* Desktop (> 992px): STRICTLY HIDE mobile-drawer-actions */
+@media (min-width: 993px) {
+  .mobile-drawer-actions {
+    display: none !important;
+  }
+
+  .desktop-nav-actions {
+    display: flex !important;
+    align-items: center;
+    gap: 0.85rem;
+  }
+}
+
+/* Tablets & Mobile Devices (<= 992px) */
+@media (max-width: 992px) {
+  .top-bar {
+    display: none !important;
+  }
+
+  .navbar-container {
+    height: 66px !important;
+    padding: 0 0.85rem !important;
+  }
+
+  .brand-sub {
+    display: none !important;
+  }
+
+  .desktop-nav-actions {
+    display: none !important;
+  }
+
+  .mobile-toggle {
+    display: flex !important;
+  }
+
+  /* Slide-out Mobile Menu Drawer */
+  .nav-menu {
+    position: fixed;
+    top: 66px;
+    left: -100%;
+    width: 100% !important;
+    max-width: 100vw !important;
+    height: calc(100vh - 66px);
+    background-color: var(--card-bg);
+    flex-direction: column;
+    padding: 1.75rem 1.5rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    transition: left 0.3s ease;
+    box-shadow: var(--shadow-lg);
+    box-sizing: border-box;
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1.25rem;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    font-size: 1.05rem;
+    width: 100%;
+    display: block;
+  }
+
+  /* Mobile Drawer Actions Section */
+  .mobile-drawer-actions {
+    display: flex !important;
+    flex-direction: column;
+    gap: 1.1rem;
+    width: 100%;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .drawer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .drawer-row span {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-main);
+  }
+
+  .btn-mobile-book {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+  html, body {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  .mobile-call-bar {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    padding: 0.6rem 0.85rem !important;
+  }
+
+  .mobile-call-bar .btn {
+    flex: 1 1 130px !important;
+    min-height: 42px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .floating-whatsapp {
+    bottom: 5.5rem;
+    right: 1rem;
+  }
+
+  .back-to-top {
+    bottom: 5.5rem;
+    right: 5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-btns .btn {
+    width: 100%;
+  }
+}
+
+/* Other Sections */
 .hero {
   position: relative;
   min-height: clamp(55vh, 75vh, 85vh);
@@ -856,7 +1011,7 @@ ul {
   flex-wrap: wrap;
 }
 
-/* Testimonial Section */
+/* Testimonials */
 .testimonials-section {
   padding: clamp(3rem, 5vw, 4.5rem) 0;
 }
@@ -1234,7 +1389,7 @@ textarea.form-control {
   gap: 1rem;
 }
 
-/* Floating Elements & Mobile Call Bar */
+/* Floating Elements */
 .floating-whatsapp {
   position: fixed;
   bottom: 2rem;
@@ -1297,180 +1452,6 @@ textarea.form-control {
   box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
   flex-wrap: wrap;
   gap: 0.5rem;
-}
-
-/* ====================================================
-   DEVICE BREAKPOINTS & NAVBAR RESPONSIVENESS
-   ==================================================== */
-
-/* Desktop (> 992px): Hide mobile drawer settings block completely */
-@media (min-width: 993px) {
-  .mobile-drawer-settings,
-  .mobile-drawer-settings * {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-  }
-}
-
-/* Tablets & Mobile Devices (<= 992px) */
-@media (max-width: 992px) {
-  .top-bar {
-    display: none !important;
-  }
-
-  .navbar-container {
-    height: 66px !important;
-    padding: 0 0.85rem !important;
-  }
-
-  .brand-sub {
-    display: none !important;
-  }
-
-  /* Hide header action controls from top header bar on mobile/tablet */
-  .nav-actions {
-    display: none !important;
-  }
-
-  /* Mobile Toggle Hamburger Button */
-  .mobile-toggle {
-    display: flex !important;
-  }
-
-  /* Mobile Menu Slide-out Drawer */
-  .nav-menu {
-    position: fixed;
-    top: 66px;
-    left: -100%;
-    width: 100% !important;
-    max-width: 100vw !important;
-    height: calc(100vh - 66px);
-    background-color: var(--card-bg);
-    flex-direction: column;
-    padding: 1.75rem 1.5rem;
-    align-items: flex-start;
-    gap: 1.25rem;
-    transition: left 0.3s ease;
-    box-shadow: var(--shadow-lg);
-    box-sizing: border-box;
-    overflow-y: auto;
-    z-index: 999;
-  }
-
-  .nav-menu.active {
-    left: 0;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    gap: 1.25rem;
-  }
-
-  .nav-item {
-    width: 100%;
-  }
-
-  .nav-link {
-    font-size: 1.05rem;
-    width: 100%;
-    display: block;
-  }
-
-  /* Settings Section Inside Mobile Hamburger Menu Drawer */
-  .mobile-drawer-settings {
-    display: flex !important;
-    flex-direction: column;
-    gap: 1.1rem;
-    width: 100%;
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-color);
-    visibility: visible !important;
-    height: auto !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-  }
-
-  .mobile-drawer-settings * {
-    visibility: visible !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-  }
-
-  .drawer-setting-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .setting-label {
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: var(--text-main);
-  }
-
-  .btn-mobile-book {
-    width: 100%;
-    margin-top: 0.5rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Small Mobile Devices (<= 768px) */
-@media (max-width: 768px) {
-  html, body {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-
-  .mobile-call-bar {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 0.5rem !important;
-    padding: 0.6rem 0.85rem !important;
-  }
-
-  .mobile-call-bar .btn {
-    flex: 1 1 130px !important;
-    min-height: 42px !important;
-    font-size: 0.85rem !important;
-  }
-
-  .floating-whatsapp {
-    bottom: 5.5rem;
-    right: 1rem;
-  }
-
-  .back-to-top {
-    bottom: 5.5rem;
-    right: 5rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-btns {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .hero-btns .btn {
-    width: 100%;
-  }
 }
 
 /* Print Stylesheet */
