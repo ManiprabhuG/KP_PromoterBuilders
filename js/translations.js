@@ -13,6 +13,8 @@ const translations = {
     nav_testimonials: "Testimonials",
     nav_contact: "Contact",
     nav_book_visit: "Book Site Visit",
+    nav_lang: "Language",
+    nav_theme: "Theme / Mode",
     
     // Top Bar
     top_location: "Anna Nagar, Madurai, TN",
@@ -146,6 +148,8 @@ const translations = {
     nav_testimonials: "வாடிக்கையாளர் கருத்துக்கள்",
     nav_contact: "தொடர்புகொள்ள",
     nav_book_visit: "இலவச மனை பார்வை முன்பதிவு",
+    nav_lang: "மொழி (Language)",
+    nav_theme: "திரை வண்ணம் (Theme)",
     
     // Top Bar
     top_location: "அண்ணா நகர், மதுரை, தமிழ்நாடு",
