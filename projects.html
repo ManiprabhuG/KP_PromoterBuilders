@@ -69,40 +69,47 @@
           <li class="nav-item"><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
         </ul>
 
-        <!-- Mobile Drawer Preferences (Only visible on Mobile when Drawer is Open) -->
-        <div class="mobile-drawer-actions">
-          <div class="drawer-row">
-            <span data-i18n="nav_lang">Language</span>
-            <div class="lang-switcher" title="Switch Language">
-              <button class="lang-btn active" data-lang="en">EN</button>
-              <button class="lang-btn" data-lang="ta">தமிழ்</button>
+        <!-- Mobile/Tablet Drawer Options (Text Links Only per test.md) -->
+        <div class="mobile-drawer-content">
+          <div class="drawer-option-group">
+            <span class="drawer-label" data-i18n="nav_lang">Language:</span>
+            <div class="drawer-text-links">
+              <a href="#" class="drawer-lang-link active" data-lang="en">EN</a>
+              <span class="drawer-sep">|</span>
+              <a href="#" class="drawer-lang-link" data-lang="ta">தமிழ்</a>
             </div>
           </div>
-          <div class="drawer-row">
-            <span data-i18n="nav_theme">Appearance</span>
-            <button class="theme-toggle" aria-label="Toggle Light and Dark Theme" title="Toggle Theme">
-              <i class="fas fa-moon"></i>
-            </button>
+
+          <div class="drawer-option-group">
+            <span class="drawer-label" data-i18n="nav_theme">Theme:</span>
+            <div class="drawer-text-links">
+              <a href="#" class="drawer-theme-link active" data-theme-set="light">Light</a>
+              <span class="drawer-sep">|</span>
+              <a href="#" class="drawer-theme-link" data-theme-set="dark">Dark</a>
+            </div>
           </div>
-          <button class="btn btn-primary btn-mobile-book open-visit-modal" data-i18n="nav_book_visit">Book Site Visit</button>
+
+          <button class="btn btn-primary btn-drawer-book open-visit-modal" data-i18n="nav_book_visit">Book Site Visit</button>
         </div>
       </nav>
 
-      <!-- Desktop Action Controls -->
+      <!-- Desktop Action Controls (Right) -->
       <div class="desktop-nav-actions">
+        <!-- Radio-style Segmented Language Switcher -->
         <div class="lang-switcher" title="Switch Language">
           <button class="lang-btn active" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="ta">தமிழ்</button>
         </div>
 
+        <!-- Circular Theme Toggle -->
         <button class="theme-toggle" aria-label="Toggle Light and Dark Theme" title="Toggle Theme">
           <i class="fas fa-moon"></i>
         </button>
 
-        <button class="btn btn-primary open-visit-modal" data-i18n="nav_book_visit">Book Site Visit</button>
+        <button class="btn btn-primary nav-book-btn open-visit-modal" data-i18n="nav_book_visit">Book Site Visit</button>
       </div>
 
-      <!-- Mobile Toggle -->
+      <!-- Mobile/Tablet Toggle -->
       <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-menu">
         <i class="fas fa-bars"></i>
       </button>

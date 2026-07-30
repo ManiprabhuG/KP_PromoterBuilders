@@ -31,12 +31,14 @@ function initLanguage() {
 
   setLanguage(currentLang);
 
-  const langBtns = document.querySelectorAll('.lang-btn');
+  // Language Switcher Handlers (Both Desktop Buttons & Mobile Text Links)
+  const langBtns = document.querySelectorAll('.lang-btn, .drawer-lang-link');
   langBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      const selected = e.target.getAttribute('data-lang');
-      if (selected && selected !== currentLang) {
-        setLanguage(selected);
+      e.preventDefault();
+      const lang = btn.getAttribute('data-lang');
+      if (lang) {
+        setLanguage(lang);
       }
     });
   });
@@ -77,31 +79,40 @@ function setLanguage(lang) {
  * Theme Engine (Light / Dark)
  * ---------------------------------------------------- */
 function initTheme() {
-  const savedTheme = localStorage.getItem('kp_theme') || 'light';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  updateThemeIcon(savedTheme);
-
-  const toggleBtns = document.querySelectorAll('.theme-toggle');
-  toggleBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const activeTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('kp_theme', newTheme);
-      updateThemeIcon(newTheme);
-    });
-  });
-}
-
-function updateThemeIcon(theme) {
-  const icons = document.querySelectorAll('.theme-toggle i');
-  icons.forEach(icon => {
-    if (theme === 'dark') {
+function setThemeMode(mode) {
+  document.documentElement.setAttribute('data-theme', mode);
+  localStorage.setItem('kp_theme', mode);
+  
+  // Update desktop circular toggle icons
+  const themeIcons = document.querySelectorAll('.theme-toggle i');
+  themeIcons.forEach(icon => {
+    if (mode === 'dark') {
       icon.className = 'fas fa-sun';
     } else {
       icon.className = 'fas fa-moon';
     }
   });
+
+  // Update mobile drawer text links active states
+  const drawerThemeLinks = document.querySelectorAll('.drawer-theme-link');
+  drawerThemeLinks.forEach(link => {
+    if (link.getAttribute('data-theme-set') === mode) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme') || 'light';
+  const next = current === 'dark' ? 'light' : 'dark';
+  setThemeMode(next);
+}
+
+function initTheme() {
+  const savedTheme = localStorage.getItem('kp_theme') || 'light';
+  setThemeMode(savedTheme);
 }
 
 /* ----------------------------------------------------
