@@ -5,19 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Kopuram Promoter & Builders LLP | Approved Plots & Real Estate in Madurai</title>
-  <meta name="description" content="Kopuram Promoter and Builders LLP is Madurai's leading DTCP & RERA approved land promotion company with 20+ years experience. Buy plots in Anna Nagar, Ring Road & Narasingam.">
+  <title>Kopuram Promoter & Builders | Approved Plots Madurai</title>
+  <meta name="description" content="Kopuram Promoter and Builders LLP is Madurai's leading DTCP & RERA approved land promotion company with 20+ years experience. Buy plots in Anna Nagar & Ring Road.">
   <meta name="keywords" content="Kopuram Builders, Kopuram Promoter, Plots in Madurai, DTCP Approved Plots Madurai, RERA Approved Plots, Land Promotion Madurai, Plot for Sale Madurai">
   <meta name="author" content="Kopuram Promoter and Builders LLP">
+  <link rel="canonical" href="https://kp-builders.vercel.app/index.html">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Kopuram Promoter & Builders LLP | Approved Plots in Madurai">
+  <meta property="og:title" content="Kopuram Promoter & Builders | Approved Plots Madurai">
   <meta property="og:description" content="20+ Years of Trusted Land Development in Madurai. DTCP & RERA approved plot layouts. Book your free site visit today!">
   <meta property="og:image" content="images/hero_bg.png">
 
   <!-- Favicon -->
-  <link rel="icon" href="images/bg-logo.png" type="image/png">
+  <link rel="icon" href="images/logo-icon.png" type="image/png">
+
+  <!-- Font Preconnect & Performance Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KPBUILDERS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KPBUILDERS');
+  </script>
 
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -71,7 +85,7 @@
   <header class="navbar">
     <div class="container navbar-container">
       <a href="index.html" class="brand-logo">
-        <img src="images/logo-icon.png" alt="Kopuram Promoter & Builders LLP Logo">
+        <img src="images/logo-icon.png" alt="Kopuram Promoter & Builders LLP Logo" width="48" height="48">
         <div class="brand-text">
           <span class="brand-name" data-i18n="brand_name">KOPURAM</span>
           <span class="brand-sub" data-i18n="brand_sub">PROMOTER & BUILDERS LLP</span>
@@ -87,21 +101,17 @@
       </nav>
 
       <div class="nav-actions">
-        <!-- Language Switcher -->
         <div class="lang-switcher" title="Switch Language">
           <button class="lang-btn active" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="ta">தமிழ்</button>
         </div>
 
-        <!-- Dark Mode Toggle -->
         <button class="theme-toggle" id="theme-toggle-btn" title="Toggle Theme">
           <i class="fas fa-moon"></i>
         </button>
 
-        <!-- CTA Button -->
         <button class="btn btn-primary btn-sm" onclick="openBookingModal()" data-i18n="nav_book_visit">Book Site Visit</button>
 
-        <!-- Mobile Drawer Toggle -->
         <button class="mobile-toggle" aria-label="Toggle Menu">
           <i class="fas fa-bars"></i>
         </button>
@@ -214,16 +224,13 @@
         <p class="section-desc" data-i18n="proj_desc">Prime locations with immediate house construction suitability, excellent connectivity, and modern amenities.</p>
       </div>
 
-      <!-- Filter Buttons -->
       <div class="filter-bar" data-aos="fade-up">
         <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All Layouts</button>
         <button class="filter-btn" data-filter="available" data-i18n="filter_available">Available Plots</button>
         <button class="filter-btn" data-filter="ongoing" data-i18n="filter_ongoing">Ongoing Layouts</button>
       </div>
 
-      <!-- Projects Grid (Populated via JS) -->
       <div class="projects-grid" id="projects-grid-container" data-aos="fade-up">
-        <!-- Rendered dynamically -->
       </div>
     </div>
   </section>
@@ -237,7 +244,6 @@
         <p class="section-desc" data-i18n="test_desc">Read genuine feedback from families who purchased their dream plots through Kopuram Promoter & Builders.</p>
       </div>
 
-      <!-- Rating Summary Box -->
       <div class="rating-summary-box" data-aos="fade-up">
         <div class="rating-badge-item">
           <i class="fab fa-google rating-badge-icon"></i>
@@ -255,7 +261,6 @@
         </div>
       </div>
 
-      <!-- Swiper Slider -->
       <div class="swiper swiper-testimonials" data-aos="fade-up">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -325,7 +330,7 @@
         <div class="footer-col">
           <div class="footer-brand">
             <div class="footer-logo-badge">
-              <img src="images/logo-icon.png" alt="Kopuram Logo">
+              <img src="images/logo-icon.png" alt="Kopuram Logo" width="48" height="48">
             </div>
             <div class="footer-brand-text">
               <span class="footer-brand-name" data-i18n="brand_name">KOPURAM</span>
@@ -378,7 +383,7 @@
   </footer>
 
   <!-- Floating Elements -->
-  <a href="https://wa.me/918681851548?text=Hi%20Kopuram%20Builders,%20I%20want%20to%20inquire%20about%20plots%20in%20Madurai." target="_blank" class="floating-whatsapp" title="Chat on WhatsApp">
+  <a href="https://wa.me/918681851548?text=Hi%20Kopuram%20Builders,%20I%20want%20to%20inquire%20about%20plots%20in%20Madurai." target="_blank" rel="noopener noreferrer" class="floating-whatsapp" title="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
@@ -392,13 +397,13 @@
     <button class="btn btn-secondary btn-sm" style="flex: 1;" onclick="openBookingModal()"><i class="fas fa-calendar-alt"></i> Book Visit</button>
   </div>
 
-  <!-- JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- JavaScript Libraries (Non-blocking defer) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
-  <!-- App Scripts -->
-  <script src="js/translations.js"></script>
-  <script src="js/projects-data.js"></script>
-  <script src="js/main.js"></script>
+  <!-- App Scripts (Deferred for performance) -->
+  <script src="js/translations.js" defer></script>
+  <script src="js/projects-data.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
