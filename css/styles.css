@@ -747,6 +747,7 @@ ul {
   color: var(--text-muted);
   padding: 0.2rem 0.4rem;
   transition: var(--transition);
+}
 
 .drawer-lang-link.active,
 .drawer-theme-link.active,
