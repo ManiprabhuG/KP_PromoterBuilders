@@ -125,6 +125,17 @@ function initNavigation() {
       }
     });
   });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (navMenu && navMenu.classList.contains('active')) {
+      if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+        const icon = mobileToggle.querySelector('i');
+        if (icon) icon.className = 'fas fa-bars';
+      }
+    }
+  });
 }
 
 /* ----------------------------------------------------
