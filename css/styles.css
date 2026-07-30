@@ -234,16 +234,13 @@ ul {
   border: 1px solid rgba(122, 12, 46, 0.3);
 }
 
-/* ====================================================
-   TOP INFORMATION BAR (Strictly No Language Switcher in Top Bar)
-   ==================================================== */
+/* Top Notification Bar */
 .top-bar {
   background-color: var(--primary-dark);
   color: #FFFFFF;
-  font-size: 0.82rem;
-  padding: 0.45rem 0;
+  font-size: 0.85rem;
+  padding: 0.4rem 0;
   border-bottom: 1px solid rgba(255,255,255,0.1);
-  overflow: hidden;
 }
 
 .top-bar-content {
@@ -251,83 +248,59 @@ ul {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .top-bar-info {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
-.top-bar-info span, .top-bar-info a {
+.top-bar-info span {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
-  color: #F1F5F9;
-}
-
-.top-bar-info a:hover {
-  color: var(--secondary-light);
+  gap: 0.4rem;
 }
 
 .top-bar-ratings {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
   color: var(--secondary-light);
   font-weight: 500;
 }
 
-.top-social-link {
-  color: #FFFFFF;
-  font-size: 1.05rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-}
-
-.top-social-link:hover {
-  color: var(--secondary-light);
-  transform: scale(1.15);
-}
-
-/* ====================================================
-   MAIN HEADER NAVBAR
-   ==================================================== */
+/* Header & Navbar */
 .navbar {
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  max-width: 100vw;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.96);
+  background-color: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
-  box-sizing: border-box;
 }
 
 [data-theme="dark"] .navbar {
-  background-color: rgba(30, 41, 59, 0.96);
+  background-color: rgba(30, 41, 59, 0.92);
 }
 
 .navbar-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
-  gap: 1.5rem;
-  width: 100%;
+  height: 80px;
+  gap: 1rem;
 }
 
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.6rem;
   flex-shrink: 0;
 }
 
@@ -342,14 +315,14 @@ ul {
 .brand-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
+  line-height: 1.15;
   white-space: nowrap;
 }
 
 .brand-name {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: clamp(1rem, 1.3vw + 0.6rem, 1.2rem);
+  font-size: 1.2rem;
   letter-spacing: 0.5px;
   color: var(--primary);
   text-transform: uppercase;
@@ -365,37 +338,36 @@ ul {
   margin-top: 1px;
 }
 
-/* Nav Menu & List */
+/* Tamil Typography Adjustments */
+html[lang="ta"] .brand-name {
+  font-size: 1.15rem;
+  letter-spacing: 0;
+}
+
+html[lang="ta"] .brand-sub {
+  font-size: 0.6rem;
+  letter-spacing: 0;
+}
+
+html[lang="ta"] .nav-link {
+  font-size: 0.88rem;
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-.nav-list {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 1.75rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-item {
-  display: flex;
-  align-items: center;
+  gap: 1.25rem;
+  margin: 0 0.5rem;
 }
 
 .nav-link {
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: var(--text-main);
   position: relative;
   padding: 0.4rem 0;
   white-space: nowrap;
-  transition: var(--transition);
 }
 
 .nav-link:hover, .nav-link.active {
@@ -405,20 +377,26 @@ ul {
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: 0;
   left: 0;
   width: 0;
-  height: 2.5px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  height: 2px;
+  background-color: var(--secondary);
   transition: var(--transition);
-  border-radius: var(--radius-full);
 }
 
 .nav-link:hover::after, .nav-link.active::after {
   width: 100%;
 }
 
-/* DESKTOP RADIO-STYLE SEGMENTED LANGUAGE SWITCHER (Pill Control per test.md) */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Language Switcher */
 .lang-switcher {
   display: flex;
   align-items: center;
@@ -431,8 +409,7 @@ ul {
 }
 
 .lang-btn {
-  min-height: 32px;
-  padding: 0.2rem 0.65rem;
+  padding: 0.25rem 0.6rem;
   border-radius: var(--radius-full);
   font-size: 0.78rem;
   font-weight: 700;
@@ -450,10 +427,10 @@ ul {
   box-shadow: var(--shadow-sm);
 }
 
-/* DESKTOP CIRCULAR THEME BUTTON (Single Icon per test.md) */
+/* Theme Toggle */
 .theme-toggle {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   border: 1px solid var(--border-color);
   background: var(--card-bg);
@@ -463,309 +440,21 @@ ul {
   justify-content: center;
   cursor: pointer;
   transition: var(--transition);
-  flex-shrink: 0;
-  font-size: 1.05rem;
 }
 
 .theme-toggle:hover {
   background-color: rgba(212, 175, 55, 0.2);
   color: var(--secondary-dark);
-  transform: rotate(15deg);
 }
 
-/* Desktop Action Controls (Right) */
-.desktop-nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  flex-shrink: 0;
-}
-
-/* Mobile Toggle Icon */
+/* Mobile Toggle */
 .mobile-toggle {
   display: none;
-  min-width: 44px;
-  min-height: 44px;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   background: none;
   border: none;
   color: var(--text-main);
   cursor: pointer;
-  flex-shrink: 0;
-  padding: 0.25rem;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ====================================================
-   RESPONSIVE BREAKPOINTS (Desktop >= 1280px | Tablet 768px-1279px | Mobile < 768px)
-   ==================================================== */
-
-/* 1. Desktop Devices (>= 1280px) */
-@media (min-width: 1280px) {
-  .mobile-drawer-content {
-    display: none !important;
-  }
-
-  .desktop-nav-actions {
-    display: flex !important;
-    align-items: center;
-    gap: 0.85rem;
-  }
-
-  .mobile-toggle {
-    display: none !important;
-  }
-}
-
-/* 2. Tablet Devices (768px to 1279px) */
-@media (min-width: 768px) and (max-width: 1279px) {
-  .top-bar {
-    display: none !important;
-  }
-
-  .navbar-container {
-    height: 70px !important;
-    padding: 0 1rem !important;
-  }
-
-  /* On Tablet: Hide Desktop Nav Menu List & Desktop Radio/Theme Buttons */
-  .nav-list {
-    display: none;
-  }
-
-  .desktop-nav-actions .lang-switcher,
-  .desktop-nav-actions .theme-toggle {
-    display: none !important;
-  }
-
-  .desktop-nav-actions .nav-book-btn {
-    display: inline-flex !important;
-  }
-
-  .mobile-toggle {
-    display: flex !important;
-  }
-
-  /* Tablet/Mobile Slide-out Drawer */
-  .nav-menu {
-    position: fixed;
-    top: 70px;
-    left: -100%;
-    width: 100vw !important;
-    max-width: 100vw !important;
-    height: calc(100vh - 70px);
-    background-color: var(--card-bg);
-    flex-direction: column;
-    padding: 2rem 1.5rem;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 1.5rem;
-    transition: left 0.3s ease;
-    box-shadow: var(--shadow-lg);
-    box-sizing: border-box;
-    overflow-y: auto;
-    z-index: 999;
-  }
-
-  .nav-menu.active {
-    left: 0;
-  }
-
-  .nav-menu.active .nav-list {
-    display: flex !important;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    gap: 1.25rem;
-  }
-
-  .nav-item {
-    width: 100%;
-  }
-
-  .nav-link {
-    font-size: 1.1rem;
-    width: 100%;
-    display: block;
-  }
-
-  /* Drawer Content: TEXT LINKS ONLY per test.md */
-  .mobile-drawer-content {
-    display: flex !important;
-    flex-direction: column;
-    gap: 1.25rem;
-    width: 100%;
-    margin-top: 1rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-color);
-  }
-}
-
-/* 3. Mobile Devices (< 768px) */
-@media (max-width: 767px) {
-  .top-bar {
-    display: none !important;
-  }
-
-  .navbar-container {
-    height: 66px !important;
-    padding: 0 0.85rem !important;
-  }
-
-  .brand-sub {
-    display: none !important;
-  }
-
-  .desktop-nav-actions {
-    display: none !important;
-  }
-
-  .mobile-toggle {
-    display: flex !important;
-  }
-
-  .nav-list {
-    display: none;
-  }
-
-  /* Slide-out Mobile Menu Drawer */
-  .nav-menu {
-    position: fixed;
-    top: 66px;
-    left: -100%;
-    width: 100vw !important;
-    max-width: 100vw !important;
-    height: calc(100vh - 66px);
-    background-color: var(--card-bg);
-    flex-direction: column;
-    padding: 1.75rem 1.5rem;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 1.5rem;
-    transition: left 0.3s ease;
-    box-shadow: var(--shadow-lg);
-    box-sizing: border-box;
-    overflow-y: auto;
-    z-index: 999;
-  }
-
-  .nav-menu.active {
-    left: 0;
-  }
-
-  .nav-menu.active .nav-list {
-    display: flex !important;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    gap: 1.25rem;
-  }
-
-  .nav-item {
-    width: 100%;
-  }
-
-  .nav-link {
-    font-size: 1.1rem;
-    width: 100%;
-    display: block;
-  }
-
-  /* Drawer Content: TEXT LINKS ONLY per test.md */
-  .mobile-drawer-content {
-    display: flex !important;
-    flex-direction: column;
-    gap: 1.25rem;
-    width: 100%;
-    margin-top: 1rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-color);
-  }
-
-  .mobile-call-bar {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 0.5rem !important;
-    padding: 0.6rem 0.85rem !important;
-  }
-
-  .mobile-call-bar .btn {
-    flex: 1 1 130px !important;
-    min-height: 42px !important;
-    font-size: 0.85rem !important;
-  }
-
-  .floating-whatsapp {
-    bottom: 5.5rem;
-    right: 1rem;
-  }
-
-  .back-to-top {
-    bottom: 5.5rem;
-    right: 5rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-btns {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .hero-btns .btn {
-    width: 100%;
-  }
-}
-
-/* Drawer Option Groups & Text Link Styles (STRICT COMPLIANCE WITH test.md) */
-.drawer-option-group {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.drawer-label {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-main);
-}
-
-.drawer-text-links {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-
-.drawer-lang-link,
-.drawer-theme-link {
-  color: var(--text-muted);
-  padding: 0.2rem 0.4rem;
-  transition: var(--transition);
-}
-
-.drawer-lang-link.active,
-.drawer-theme-link.active,
-.drawer-lang-link:hover,
-.drawer-theme-link:hover {
-  color: var(--primary);
-  font-weight: 700;
-  text-decoration: underline;
-}
-
-.drawer-sep {
-  color: var(--border-color);
-  font-size: 0.85rem;
-}
-
-.btn-drawer-book {
-  width: 100%;
-  margin-top: 0.5rem;
 }
 
 /* Other Layout Sections */
