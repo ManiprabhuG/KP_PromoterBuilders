@@ -1,6 +1,6 @@
 /* 
-  Kopuram Promoter & Builders LLP - Responsive Design System
-  Optimized across 320px, 375px, 480px, 768px, 1024px, 1366px, 1920px+
+  Kopuram Promoter & Builders LLP - Bulletproof Mobile Responsive Stylesheet
+  Optimized for Oppo, Samsung, iPhone, Vivo, Redmi & All Mobile Viewports
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
@@ -49,22 +49,25 @@
   --border-color: #334155;
 }
 
-/* Reset & Base */
+/* Global Reset & Strict Zero Horizontal Overflow */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
+html {
   width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
+  max-width: 100vw;
+  overflow-x: hidden !important;
   scroll-behavior: smooth;
-  font-size: clamp(14px, 0.9vw + 10px, 15px); /* Fluid base font size */
+  font-size: clamp(14px, 0.9vw + 10px, 15px);
 }
 
 body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
   font-family: var(--font-body);
   color: var(--text-main);
   background-color: var(--light-bg);
@@ -73,9 +76,10 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
-/* Tamil Typography & Word Wrap Safety */
+/* Tamil Word Wrap Safety */
 html[lang="ta"] h1, 
 html[lang="ta"] h2, 
 html[lang="ta"] h3, 
@@ -88,21 +92,21 @@ html[lang="ta"] button {
   overflow-wrap: break-word;
 }
 
-/* Fluid Typography with clamp() */
+/* Headings */
 h1 {
-  font-size: clamp(1.85rem, 4vw + 0.8rem, 2.85rem);
+  font-size: clamp(1.75rem, 4vw + 0.8rem, 2.85rem);
 }
 
 h2 {
-  font-size: clamp(1.45rem, 2.5vw + 0.75rem, 2rem);
+  font-size: clamp(1.4rem, 2.5vw + 0.75rem, 2rem);
 }
 
 h3 {
-  font-size: clamp(1.2rem, 1.8vw + 0.6rem, 1.45rem);
+  font-size: clamp(1.15rem, 1.8vw + 0.6rem, 1.45rem);
 }
 
 h4 {
-  font-size: clamp(1rem, 1.2vw + 0.5rem, 1.15rem);
+  font-size: clamp(0.95rem, 1.2vw + 0.5rem, 1.15rem);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -128,7 +132,7 @@ ul {
   list-style: none;
 }
 
-/* Container System (Fluid clamp 320px to 1140px) */
+/* Container System */
 .container {
   width: 100%;
   max-width: clamp(320px, 92vw, 1140px);
@@ -137,7 +141,7 @@ ul {
   box-sizing: border-box;
 }
 
-/* Buttons (Touch Target Minimum 44x44px for Accessibility) */
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -252,13 +256,14 @@ ul {
   color: #854D0E;
 }
 
-/* Top Notification Bar */
+/* Top Bar (Desktop Only) */
 .top-bar {
   background-color: var(--primary-dark);
   color: #FFFFFF;
-  font-size: clamp(0.75rem, 0.8vw + 0.4rem, 0.82rem);
+  font-size: 0.82rem;
   padding: 0.4rem 0;
   border-bottom: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
 }
 
 .top-bar-content {
@@ -297,7 +302,7 @@ ul {
   width: 100%;
   max-width: 100vw;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow-sm);
@@ -306,7 +311,7 @@ ul {
 }
 
 [data-theme="dark"] .navbar {
-  background-color: rgba(30, 41, 59, 0.95);
+  background-color: rgba(30, 41, 59, 0.96);
 }
 
 .navbar-container {
@@ -315,6 +320,8 @@ ul {
   justify-content: space-between;
   height: 72px;
   gap: 0.75rem;
+  width: 100%;
+  max-width: 100%;
 }
 
 .brand-logo {
@@ -359,7 +366,6 @@ ul {
   margin-top: 1px;
 }
 
-/* Tamil Typography Adjustments */
 html[lang="ta"] .brand-name {
   font-size: 1.05rem;
   letter-spacing: 0;
@@ -368,10 +374,6 @@ html[lang="ta"] .brand-name {
 html[lang="ta"] .brand-sub {
   font-size: 0.58rem;
   letter-spacing: 0;
-}
-
-html[lang="ta"] .nav-link {
-  font-size: 0.85rem;
 }
 
 .nav-menu {
@@ -448,7 +450,7 @@ html[lang="ta"] .nav-link {
   box-shadow: var(--shadow-sm);
 }
 
-/* Theme Toggle (Min 44x44px Touch Target) */
+/* Theme Toggle */
 .theme-toggle {
   width: 44px;
   height: 44px;
@@ -469,7 +471,7 @@ html[lang="ta"] .nav-link {
   color: var(--secondary-dark);
 }
 
-/* Mobile Toggle (Min 44x44px Touch Target) */
+/* Mobile Toggle */
 .mobile-toggle {
   display: none;
   min-width: 44px;
@@ -1004,7 +1006,7 @@ textarea.form-control {
   min-height: 110px;
 }
 
-/* Modals (Responsive Full-screen on Mobile <= 576px) */
+/* Modals */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -1225,12 +1227,12 @@ textarea.form-control {
   gap: 1rem;
 }
 
-/* Floating Mobile Controls Dock (Fixed at bottom right on mobile/tablet) */
+/* Floating Mobile Controls Dock */
 .floating-controls-dock {
-  display: none; /* Hidden on large devices by default */
+  display: none;
 }
 
-/* Floating Action Elements */
+/* Floating Action Buttons */
 .floating-whatsapp {
   position: fixed;
   bottom: 2rem;
@@ -1314,12 +1316,44 @@ textarea.form-control {
   }
 }
 
-/* 3. Tablets & Small Laptops (769px - 992px) */
+/* 3. Tablets & Mobile Devices (<= 992px) - ROOT CAUSE FIX FOR OPPO / MOBILE OVERFLOW */
 @media (max-width: 992px) {
-  /* Hide header lang & theme controls on mobile/tablet */
-  .nav-actions .lang-switcher,
-  .nav-actions .theme-toggle {
+  .top-bar {
     display: none !important;
+  }
+
+  .navbar {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow: hidden !important;
+  }
+
+  .navbar-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 0.85rem !important;
+    height: 64px !important;
+  }
+
+  .brand-sub {
+    display: none !important;
+  }
+
+  /* CRITICAL: Hide all non-essential header controls on mobile so header NEVER overflows 100vw */
+  .nav-actions .lang-switcher,
+  .nav-actions .theme-toggle,
+  .nav-actions .btn-primary {
+    display: none !important;
+  }
+
+  /* Mobile Toggle Icon */
+  .mobile-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1.4rem;
   }
 
   /* Show floating control dock at bottom right */
@@ -1339,22 +1373,17 @@ textarea.form-control {
     backdrop-filter: blur(10px);
   }
 
-  .mobile-toggle {
-    display: flex;
-  }
-  .brand-sub {
-    display: none;
-  }
+  /* Slide-out Mobile Menu Drawer */
   .nav-menu {
     position: fixed;
-    top: 72px;
+    top: 64px;
     left: -100%;
-    width: 100%;
-    max-width: 100vw;
-    height: calc(100vh - 72px);
+    width: 100% !important;
+    max-width: 100vw !important;
+    height: calc(100vh - 64px);
     background-color: var(--card-bg);
     flex-direction: column;
-    padding: 2rem 1.5rem;
+    padding: 1.75rem 1.5rem;
     align-items: flex-start;
     gap: 1.25rem;
     transition: left 0.3s ease;
@@ -1363,53 +1392,63 @@ textarea.form-control {
     overflow-y: auto;
     z-index: 999;
   }
+
   .nav-menu.active {
     left: 0;
   }
+
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* 4. Small Tablets & Mobile Phones (481px - 768px) */
+/* 4. Small Mobile Devices (<= 768px) */
 @media (max-width: 768px) {
   html, body {
+    width: 100vw !important;
+    max-width: 100vw !important;
     overflow-x: hidden !important;
   }
-  .top-bar-info {
-    display: none;
-  }
+
   .mobile-call-bar {
     display: flex;
     gap: 0.6rem;
   }
+
   .floating-controls-dock {
     bottom: 4.5rem;
     right: 4.5rem;
   }
+
   .floating-whatsapp {
     bottom: 4.5rem;
     right: 1rem;
   }
+
   .back-to-top {
     bottom: 4.5rem;
     right: 10.5rem;
   }
+
   .stat-card {
     border-right: none;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.75rem;
   }
+
   .stat-card:last-child {
     border-bottom: none;
   }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
+
   .hero-btns {
     flex-direction: column;
     width: 100%;
   }
+
   .hero-btns .btn {
     width: 100%;
   }
@@ -1418,50 +1457,51 @@ textarea.form-control {
 /* 5. Mobile Phones (320px - 480px) */
 @media (max-width: 480px) {
   html, body {
+    width: 100vw !important;
+    max-width: 100vw !important;
     overflow-x: hidden !important;
   }
+
   .container {
     padding: 0 0.85rem;
   }
+
   .brand-name {
     font-size: 0.95rem;
   }
-  .nav-actions {
-    gap: 0.35rem;
-  }
-  .btn-sm {
-    padding: 0.35rem 0.6rem;
-    font-size: 0.78rem;
-  }
+
   .floating-controls-dock {
     bottom: 4.5rem;
     right: 4.25rem;
     padding: 0.25rem 0.45rem;
   }
+
   .floating-whatsapp {
     bottom: 4.5rem;
     right: 0.75rem;
   }
+
   .back-to-top {
     bottom: 4.5rem;
     right: 9.75rem;
   }
+
   .modal-card {
     margin: 0.5rem;
     max-height: 95vh;
     border-radius: var(--radius-sm);
   }
+
   .modal-body {
     padding: 1rem;
   }
 }
 
-/* ====================================================
-   PRINT STYLESHEET (@media print)
-   ==================================================== */
+/* Print Stylesheet */
 @media print {
   .top-bar,
   .navbar,
+  .floating-controls-dock,
   .floating-whatsapp,
   .back-to-top,
   .mobile-call-bar,
@@ -1479,11 +1519,5 @@ textarea.form-control {
   .container {
     max-width: 100% !important;
     padding: 0 !important;
-  }
-  
-  .project-card, .feature-card {
-    break-inside: avoid;
-    box-shadow: none !important;
-    border: 1px solid #CCC !important;
   }
 }
