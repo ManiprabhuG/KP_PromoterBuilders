@@ -19,7 +19,7 @@ const projectsData = [
       ta: "கிடைக்கிறது"
     },
     badgeClass: "badge-success",
-    image: "images/project_kopuram_nagar.png",
+    image: "images/project_kopuram_nagar.jpg",
     approval: "DTCP & RERA Approved (RERA No: TN/20/Layout/0124/2024)",
     dtcpNo: "DTCP No: 45/2024",
     plotSizes: "1,200 - 2,400 Sq.Ft",
@@ -44,7 +44,7 @@ const projectsData = [
       "Fast Appreciating Residential Hub"
     ],
     gallery: [
-      "images/project_kopuram_nagar.png",
+      "images/project_kopuram_nagar.jpg",
       "images/hero_bg.png"
     ]
   },
@@ -64,7 +64,7 @@ const projectsData = [
       ta: "நடைபெறுகிறது"
     },
     badgeClass: "badge-warning",
-    image: "images/project_sangatamil_nagar.png",
+    image: "images/project_sangatamil_nagar.jpg",
     approval: "DTCP Approved (DTCP No: 88/2023)",
     dtcpNo: "DTCP No: 88/2023",
     plotSizes: "1,000 - 3,000 Sq.Ft",
@@ -88,8 +88,8 @@ const projectsData = [
       "100% Clear Title & Immediate Registration"
     ],
     gallery: [
-      "images/project_sangatamil_nagar.png",
-      "images/hero_bg.png"
+      "images/project_sangatamil_nagar.jpg",
+      "images/hero_bg.jpg"
     ]
   },
   {
@@ -108,7 +108,7 @@ const projectsData = [
       ta: "கிடைக்கிறது"
     },
     badgeClass: "badge-success",
-    image: "images/project_diamond_city.png",
+    image: "images/project_diamond_city.jpg",
     approval: "DTCP & RERA Approved (RERA No: TN/20/Layout/0298/2024)",
     dtcpNo: "DTCP No: 102/2024",
     plotSizes: "1,500 - 4,000 Sq.Ft",
@@ -133,8 +133,8 @@ const projectsData = [
       "High Capital Appreciation Potential"
     ],
     gallery: [
-      "images/project_diamond_city.png",
-      "images/hero_bg.png"
+      "images/project_diamond_city.jpg",
+      "images/hero_bg.jpg"
     ]
   }
 ];
