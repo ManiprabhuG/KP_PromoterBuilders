@@ -86,26 +86,85 @@ export default async function RootLayout({
   const lang = (resolvedParams.lang === 'ta' ? 'ta' : 'en') as Locale;
   const dict = await getDictionary(lang);
 
-  const jsonLd = {
+  const jsonLdGraph = {
     '@context': 'https://schema.org',
-    '@type': 'RealEstateAgent',
-    name: 'Kopuram Promoter and Builders LLP',
-    image: 'https://kp-promoter-builders.vercel.app/images/bg-logo.png',
-    telephone: '+91 86818 51548',
-    email: 'info@kopurambuilders.com',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Anna Nagar',
-      addressRegion: 'Madurai, Tamil Nadu',
-      postalCode: '625020',
-      addressCountry: 'IN',
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '55',
-    },
-    openingHours: 'Mo-Sa 10:00-19:00',
+    '@graph': [
+      {
+        '@type': ['RealEstateAgent', 'LocalBusiness'],
+        '@id': 'https://kp-promoter-builders.vercel.app/#organization',
+        name: 'Kopuram Promoter and Builders LLP',
+        legalName: 'Kopuram Promoter and Builders LLP',
+        url: 'https://kp-promoter-builders.vercel.app',
+        logo: 'https://kp-promoter-builders.vercel.app/images/logo-icon.png',
+        image: 'https://kp-promoter-builders.vercel.app/images/bg-logo.png',
+        telephone: '+91 86818 51548',
+        email: 'info@kopurambuilders.com',
+        priceRange: '₹₹',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Anna Nagar',
+          addressLocality: 'Madurai',
+          addressRegion: 'Tamil Nadu',
+          postalCode: '625020',
+          addressCountry: 'IN',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 9.9196,
+          longitude: 78.1394,
+        },
+        areaServed: {
+          '@type': 'AdministrativeArea',
+          name: 'Madurai, Tamil Nadu, India',
+        },
+        sameAs: [
+          'https://www.instagram.com/kopuram_promoter_builders_llp/',
+        ],
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.9',
+          reviewCount: '55',
+          bestRating: '5',
+          worstRating: '1',
+        },
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            opens: '10:00',
+            closes: '19:00',
+          },
+        ],
+      },
+      {
+        '@type': 'WebSite',
+        '@id': 'https://kp-promoter-builders.vercel.app/#website',
+        url: 'https://kp-promoter-builders.vercel.app',
+        name: 'Kopuram Promoter & Builders LLP',
+        publisher: {
+          '@id': 'https://kp-promoter-builders.vercel.app/#organization',
+        },
+        inLanguage: ['en', 'ta'],
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `https://kp-promoter-builders.vercel.app/${lang}/#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `https://kp-promoter-builders.vercel.app/${lang}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Projects',
+            item: `https://kp-promoter-builders.vercel.app/${lang}/projects`,
+          },
+        ],
+      },
+    ],
   };
 
   const gaId = process.env.NEXT_PUBLIC_GA_ID || 'G-KPBUILDERS';
@@ -117,7 +176,7 @@ export default async function RootLayout({
         <link rel="apple-touch-icon" href="/images/logo-icon.png" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
         />
         {/* Google Analytics 4 (GA4) Tag */}
         <Script

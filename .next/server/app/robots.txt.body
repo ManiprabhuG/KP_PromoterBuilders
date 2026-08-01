@@ -1,4 +1,6 @@
 User-Agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
 
-Sitemap: https://kp-builders.vercel.app/sitemap.xml
+Sitemap: https://kp-promoter-builders.vercel.app/sitemap.xml

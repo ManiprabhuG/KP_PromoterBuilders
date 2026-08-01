@@ -1,755 +1,612 @@
-# Kpbuilder.md
+# seo.md
 
-# PROJECT OVERVIEW
+# OBJECTIVE
 
-Create a modern, professional, responsive, SEO-friendly website for **Kopuram Promoter and Builders LLP**, a trusted real estate and construction company based in Madurai with more than 20 years of experience in land development and plot sales.
+Analyze the attached RankMath SEO Audit Report and identify all failed tests, warnings, weak SEO areas, technical SEO issues, content structure issues, indexing issues, and performance bottlenecks.
 
-The website must create trust, showcase projects professionally, generate site visit leads, and support both **English** and **Tamil** languages with a one-click language switcher.
+The current SEO score is approximately:
 
----
+69/100
 
-# BUSINESS INFORMATION
+Goal:
 
-## Company Name
+Increase the SEO score to:
 
-Kopuram Promoter and Builders LLP
+90+ / 100
 
-## Industry
+without changing the existing branding, design, business content, project structure, UI, or user experience.
 
-Real Estate Development, Plot Promotion, Construction & Land Sales
-
-## Location
-
-Anna Nagar, Madurai, Tamil Nadu, India
-
-## Contact Details
-
-Phone: +91 86818 51548
-
-Email: [info@kopurambuilders.com](mailto:info@kopurambuilders.com) (Placeholder)
-
-Business Hours:
-
-Monday – Saturday: 10:00 AM – 7:00 PM
-
-Sunday: Closed
+Only improve SEO, technical SEO, structured data, indexing, content hierarchy, and search engine visibility.
 
 ---
 
-# COMPANY PROFILE
+# IMPORTANT INSTRUCTIONS
 
-## About Us
+Before making any changes:
 
-Kopuram Promoter and Builders LLP is a trusted name in Madurai's real estate sector with over 20 years of experience in helping customers purchase approved plots with complete confidence.
+Analyze:
 
-Our commitment to transparency, legal compliance, and customer satisfaction has earned us strong customer trust and excellent ratings across leading platforms.
+- Current Website Structure
+- Existing Metadata
+- Current SEO Configuration
+- Sitemap Configuration
+- Robots.txt
+- Open Graph Tags
+- Schema Markup
+- Heading Structure
+- Internal Linking
+- Performance Setup
+- Canonical URLs
+- Multi-language SEO
 
-### Ratings
-
-Google Rating:
-4.9 ★★★★★
-55 Reviews
-
-Justdial Rating:
-4.7 ★★★★★
-42 Reviews
-
----
-
-# MISSION
-
-To make home ownership a joyful and stress-free experience by providing DTCP and RERA-approved plots with complete transparency and end-to-end customer support.
+Generate a complete SEO audit summary before applying fixes.
 
 ---
 
-# WHY CHOOSE US
+# ISSUES IDENTIFIED IN THE RANKMATH REPORT
 
-Display these as premium animated cards.
+The report indicates the following major issues:
 
-### 20+ Years Experience
+## FAILED TESTS
 
-Trusted by families and investors across Madurai.
+### H1 Heading Missing
 
-### DTCP & RERA Approved
+Issue:
 
-Legally compliant projects for secure investments.
+No H1 tag found.
 
-### Transparent Pricing
+SEO Impact:
 
-No hidden charges.
+Search engines cannot properly understand page topic hierarchy.
 
-### End-to-End Support
+Required Fix:
 
-From site visit to registration.
+Create exactly ONE H1 tag per page.
 
-### Loan Assistance
+Examples:
 
-Support for bank loans and documentation.
+Home Page:
 
-### Post-Purchase Services
+H1:
+Kopuram Promoter & Builders LLP
 
-Patta transfer guidance and customer support.
+Projects Page:
 
----
+H1:
+DTCP & RERA Approved Plots in Madurai
 
-# WEBSITE GOALS
+Contact Page:
 
-1. Generate qualified leads.
-2. Increase project inquiries.
-3. Enable site visit bookings.
-4. Build trust through testimonials.
-5. Showcase project details professionally.
-6. Improve local SEO visibility.
-7. Support bilingual visitors.
+H1:
+Contact Kopuram Promoter & Builders LLP
 
----
-
-# DESIGN REQUIREMENTS
-
-## Design Style
-
-Modern
-
-Professional
-
-Premium
-
-Corporate
-
-Trust-Oriented
-
-Luxury Real Estate Appearance
-
-## User Experience
-
-Clean layout
-
-Fast loading
-
-Easy navigation
-
-Mobile-first
-
-Accessible design
-
-High conversion focus
+Never create multiple H1 tags.
 
 ---
 
-# COLOR THEME
+### H2 Headings Missing
 
-Use colors extracted from company logo.
+Issue:
 
-Generate automatic palette:
+No H2 headings found.
 
-Primary Color:
-Logo Primary
+Required Fix:
 
-Secondary Color:
-Logo Secondary
+Create proper heading hierarchy.
 
-Accent Color:
-Logo Highlight
+Example:
 
-Background:
-#FFFFFF
+H1
 
-Text:
-#1A1A1A
+H2
 
-Light Sections:
-#F8F9FA
+H3
 
-Hover Effects:
-Derived from primary color
+H4
 
----
+Structure:
 
-# TYPOGRAPHY
+H1:
+Kopuram Promoter & Builders LLP
 
-Headings:
-Poppins Bold
+H2:
+Our Projects
 
-Body:
-Inter
+H2:
+Why Choose Us
 
-Tamil Font:
-Noto Sans Tamil
+H2:
+Customer Testimonials
+
+H2:
+Contact Information
 
 ---
 
-# TECHNOLOGY STACK
+### Homepage Returns 404
 
-Frontend:
+Issue:
 
-* HTML5
-* CSS3
-* JavaScript ES6+
+Root homepage URL returns 404.
 
-Enhancements:
+Example:
 
-* GSAP Animations
-* AOS Scroll Animations
-* Swiper Slider
-* Font Awesome
-* Google Fonts
+https://kp-builders.vercel.app
 
-Performance:
+Required Fix:
 
-* Lazy Loading
-* Image Optimization
-* SEO Optimization
-* Schema Markup
-
-Future Ready:
-
-* React-compatible structure
-* API-ready forms
-* CMS-ready architecture
-
----
-
-# MULTI LANGUAGE FEATURE
-
-Create a language switcher at the top navigation.
-
-Languages:
-
-1. English
-2. தமிழ்
+Ensure homepage redirects properly.
 
 Requirements:
 
-* One-click language switch
-* Instant content translation
-* Store selected language in localStorage
-* Remember language on revisit
-* SEO-friendly implementation
+/ → Homepage
+
+/en → English Homepage
+
+/ta → Tamil Homepage
+
+No homepage URL should return 404.
 
 ---
 
-# WEBSITE STRUCTURE
+### WWW Canonicalization Missing
 
-## HOME PAGE
+Issue:
 
-### Hero Section
+WWW and Non-WWW versions are not properly redirected.
 
-Large full-screen banner.
+Required Fix:
 
-Headline:
+Choose one canonical domain.
 
-"Your Dream Plot, Hassle-Free"
+Example:
 
-Subheading:
+Preferred:
 
-20+ Years of Trusted Land Development in Madurai
+https://kp-builders.vercel.app
 
-Buttons:
+Redirect:
 
-* Book Site Visit
-* Explore Projects
+https://www.kp-builders.vercel.app
 
-Background:
+to
 
-Premium real estate visuals.
+https://kp-builders.vercel.app
 
-Add subtle animated overlays.
-
----
-
-### Trust Indicators
-
-Display:
-
-20+ Years Experience
-
-DTCP Approved
-
-RERA Approved
-
-4.9 Google Rating
-
-100% Transparent Process
+using 301 redirects.
 
 ---
 
-### Featured Projects
+### Sitemap Missing
 
-Show project cards with:
+Issue:
 
-Project Image
+No sitemap detected.
 
-Location
+Required Fix:
 
-Approval Status
+Generate:
 
-Brief Description
+sitemap.xml
 
-Buttons:
+Include:
 
-* View Details
-* Book Site Visit
+Home
 
-Projects:
+About
 
-#### Kopuram Nagar Phase 2
+Projects
 
-#### Kopuram Sangatamil Nagar Phase III, Panaikulam
+Testimonials
 
-#### Kopuram Diamond City, Narasingam
+Contact
 
----
+Tamil Pages
 
-### Customer Reviews
+English Pages
 
-Animated testimonial slider.
+Future Blog Pages
 
-Display:
+Add:
 
-Google Rating
+lastmod
 
-Justdial Rating
+changefreq
 
-Star Ratings
+priority
 
-Customer Photos
-
-Review Snippets
+Automatically update sitemap.
 
 ---
 
-### CTA Section
+# WARNINGS IDENTIFIED
 
-Headline:
+### Internal Links Too Low
 
-Ready to Own Your Dream Plot?
+Current:
 
-Button:
+7 Internal Links
 
-Book Free Site Visit
+Required:
 
----
+Minimum 20+ Internal Links
 
-# ABOUT PAGE
+Add contextual links between:
 
-## Company Story
+Home
 
-Interactive timeline:
+Projects
 
-* Company Establishment
-* Growth Journey
-* Major Milestones
-* Current Success
+About
 
----
+Testimonials
 
-## Mission & Vision
+Contact
 
-Display as elegant cards.
+Site Visit Form
 
----
+Project Detail Pages
 
-## Why Choose Us
+Language Versions
 
-Animated icon-based feature grid.
+Footer Links
 
 ---
 
-## Certifications Section
+### Content Freshness Signals Missing
 
-Display badges for:
+Issue:
 
-DTCP Approved
+No freshness indicators found.
 
-RERA Approved
+Required Fix:
 
-Google Ratings
+Add:
 
-Justdial Ratings
+lastmod in sitemap
 
-Customer Trust
+og:updated_time
 
----
+Last-Modified header
 
-# PROJECTS PAGE
-
-Create a professional project showcase.
+Updated date schema
 
 ---
 
-## Project Listing
+### Response Time Too High
 
-Filter Options:
+Current:
 
-* All Projects
-* Available
-* Ongoing
-* Sold Out
+1.53 Seconds
 
----
+Target:
 
-## Project Detail Pages
+Below 0.8 Seconds
 
-For each project create:
+Required Fix:
 
-### Hero Banner
+Implement:
 
-Project Name
+Caching
 
-Location
+Image Optimization
 
-Approval Status
+Code Splitting
 
----
+Dynamic Imports
 
-### Project Overview
+Static Rendering
 
-Project Description
+Lazy Loading
 
-Highlights
+Compression
 
-Advantages
+CDN Optimization
 
 ---
 
-### Amenities
+# SEO IMPROVEMENTS
 
-Road Access
+## META TAG OPTIMIZATION
 
-Street Lights
+Review all pages.
 
-Drainage
+Generate optimized:
 
-Water Facility
-
-Parks
-
-Community Spaces
-
----
-
-### Layout Gallery
-
-Image Gallery
-
-Zoom Functionality
-
-Lightbox View
-
----
-
-### Location Benefits
-
-Nearby Schools
-
-Hospitals
-
-Colleges
-
-Bus Stand
-
-Railway Station
-
-Airport
-
----
-
-### Payment Plans
-
-Flexible plans section.
-
----
-
-### RERA Information
-
-Approval Details
-
-Registration Number
-
-Documents Download
-
----
-
-### Site Visit CTA
-
-Book Site Visit
-
-Call Now
-
-WhatsApp Inquiry
-
----
-
-# TESTIMONIALS PAGE
-
-## Customer Reviews
-
-Show:
-
-Google Reviews
-
-Justdial Reviews
-
-Star Ratings
-
-Customer Stories
-
----
-
-## Video Testimonials
-
-Embedded video section.
-
-Create video placeholder cards.
-
----
-
-## Success Stories
-
-Before/After customer journey cards.
-
----
-
-# CONTACT PAGE
-
-## Contact Information
-
-Office Address
-
-Anna Nagar, Madurai
-
-Phone
-
-+91 86818 51548
-
-Email
-
-[info@kopurambuilders.com](mailto:info@kopurambuilders.com)
-
-Business Hours
-
-Mon-Sat: 10am - 7pm
-
-Sun: Closed
-
----
-
-## Contact Form
-
-Fields:
-
-Name
-
-Phone Number
-
-Email Address
-
-Preferred Project
-
-Message
-
-Submit Button
-
-Validation Required
-
----
-
-## Site Visit Booking Form
-
-Fields:
-
-Name
-
-Phone
-
-Preferred Date
-
-Preferred Time
-
-Interested Project
-
-Remarks
-
-Submit
-
----
-
-## Google Map
-
-Interactive office location map.
-
----
-
-## Quick Contact
-
-Call Button
-
-WhatsApp Button
-
-Email Button
-
----
-
-# ADDITIONAL FEATURES
-
-## Sticky Navigation
-
-Always visible.
-
----
-
-## Floating WhatsApp
-
-Fixed bottom-right.
-
----
-
-## Click To Call
-
-Mobile optimized.
-
----
-
-## Back To Top
-
-Animated button.
-
----
-
-## Dark Mode
-
-Optional toggle.
-
----
-
-## Live Chat Placeholder
-
-Future integration ready.
-
----
-
-## Lead Capture Popup
-
-Show after 20 seconds.
-
-Offer:
-
-Free Site Visit
-
----
-
-## Download Brochure
-
-PDF Download Button
-
----
-
-# SEO REQUIREMENTS
-
-Create:
-
-Meta Title
+Title
 
 Meta Description
 
-Open Graph Tags
+Keywords
 
-Twitter Cards
+Canonical URL
 
-Schema Markup
-
-Local Business Schema
-
-Real Estate Schema
+Robots Meta
 
 ---
 
-# PERFORMANCE REQUIREMENTS
+## HOMEPAGE SEO
 
-Google Lighthouse Score:
+Suggested Title:
 
+Kopuram Promoter & Builders | DTCP & RERA Approved Plots in Madurai
+
+Suggested Meta Description:
+
+Kopuram Promoter and Builders LLP is Madurai's trusted DTCP & RERA approved land promotion company with 20+ years of experience. Book your free site visit today.
+
+---
+
+# OPEN GRAPH IMPROVEMENTS
+
+Verify:
+
+og:title
+
+og:description
+
+og:image
+
+og:url
+
+og:type
+
+og:site_name
+
+---
+
+# TWITTER META TAGS
+
+Generate:
+
+twitter:card
+
+twitter:title
+
+twitter:description
+
+twitter:image
+
+---
+
+# SCHEMA MARKUP
+
+Verify and enhance:
+
+## Organization Schema
+
+## Local Business Schema
+
+## Real Estate Agent Schema
+
+## Website Schema
+
+## Breadcrumb Schema
+
+## FAQ Schema
+
+## Contact Page Schema
+
+## Review Schema
+
+## Aggregate Rating Schema
+
+Use actual business information.
+
+---
+
+# LOCAL SEO IMPROVEMENTS
+
+Business:
+
+Kopuram Promoter and Builders LLP
+
+Location:
+
+Anna Nagar, Madurai
+
+Create Local SEO optimization.
+
+Include:
+
+- Madurai
+- Anna Nagar
+- Tamil Nadu
+- DTCP Approved Plots
+- RERA Approved Plots
+
+in strategic locations.
+
+---
+
+# IMAGE SEO
+
+Analyze all images.
+
+Requirements:
+
+Every image must have:
+
+- Alt Tag
+- Title Attribute
+- Proper Filename
+
+Examples:
+
+dtcp-approved-plots-madurai.webp
+
+kopuram-diamond-city.webp
+
+Avoid:
+
+image1.jpg
+
+photo.jpg
+
+---
+
+# MULTI LANGUAGE SEO
+
+Current Languages:
+
+English
+
+Tamil
+
+Requirements:
+
+Implement:
+
+hreflang
+
+Canonical URLs
+
+Language-specific metadata
+
+Examples:
+
+/en
+
+/ta
+
+Generate proper alternate links.
+
+---
+
+# INTERNAL LINKING STRATEGY
+
+Create:
+
+Home → Projects
+
+Projects → Contact
+
+Projects → Site Visit
+
+About → Projects
+
+Testimonials → Contact
+
+Footer → All Important Pages
+
+Language Pages Cross Link
+
+Minimum:
+
+20+ Internal Links
+
+---
+
+# BLOG SEO PREPARATION
+
+Create future-ready structure:
+
+/blog
+
+/blog/dtcp-approved-plots
+
+/blog/rera-approved-plots
+
+/blog/real-estate-investment-madurai
+
+Generate schema-ready structure.
+
+---
+
+# TECHNICAL SEO
+
+Verify:
+
+robots.txt
+
+sitemap.xml
+
+canonical tags
+
+301 redirects
+
+404 page
+
+HTTPS
+
+security headers
+
+OpenGraph
+
+Twitter cards
+
+Structured data
+
+---
+
+# PERFORMANCE SEO
+
+Target Lighthouse Scores:
+
+SEO:
+100
+
+Accessibility:
+95+
+
+Best Practices:
+95+
+
+Performance:
 90+
 
-Mobile Friendly
+---
 
-Responsive Design
+# NEXT.JS SEO OPTIMIZATION
 
-Fast Loading
+If project uses Next.js:
 
-Core Web Vitals Optimized
+Implement:
+
+Metadata API
+
+generateMetadata()
+
+robots.ts
+
+sitemap.ts
+
+Static Generation
+
+ISR where appropriate
+
+Image Component
+
+Dynamic Imports
 
 ---
 
-# RESPONSIVE REQUIREMENTS
+# FINAL REPORT
 
-Must work perfectly on:
+After fixes generate:
 
-Desktop
+## Issues Found
 
-Laptop
+## Issues Fixed
 
-Tablet
+## SEO Score Improvement
 
-Mobile
+## Technical SEO Improvements
 
-Large Screens
+## Content Improvements
 
-Landscape Mode
+## Internal Linking Improvements
 
-Portrait Mode
+## Schema Improvements
 
----
+## Performance Improvements
 
-# ANIMATIONS
-
-Use professional animations only.
-
-Hero Fade In
-
-Card Hover Effects
-
-Counter Animations
-
-Scroll Reveal Effects
-
-Gallery Transitions
-
-Smooth Navigation
-
-Page Transitions
+## Remaining Recommendations
 
 ---
 
-# SECURITY
+# FINAL GOAL
 
-Protect forms from spam.
+Transform the current website SEO score from 69/100 to 90+ by fixing all failed RankMath tests, resolving warnings, improving technical SEO, strengthening page structure, enhancing local SEO, optimizing performance, and ensuring the website is fully ready for Google indexing and long-term organic growth.
 
-Use:
-
-Validation
-
-Sanitization
-
-Captcha Ready
-
-Secure Form Submission
-
----
-
-# FINAL OUTPUT
-
-Generate a complete production-ready website with:
-
-* Responsive Design
-* English/Tamil Language Switcher
-* Professional Real Estate UI
-* Project Showcase
-* Lead Generation Forms
-* SEO Optimization
-* Modern Animations
-* WhatsApp Integration
-* Site Visit Booking System
-* Google Map Integration
-* High Performance Architecture
-
-The final website should reflect trust, professionalism, premium real estate branding, and encourage visitors to book site visits and inquire about projects.
+Do not modify branding, design, colors, layouts, or business content unless required for SEO compliance.

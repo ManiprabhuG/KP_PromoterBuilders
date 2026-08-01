@@ -5,7 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
+      disallow: ['/api/', '/_next/'],
     },
-    sitemap: 'https://kp-builders.vercel.app/sitemap.xml',
+    sitemap: 'https://kp-promoter-builders.vercel.app/sitemap.xml',
   };
 }

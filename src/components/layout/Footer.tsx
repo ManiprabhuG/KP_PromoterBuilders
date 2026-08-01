@@ -19,7 +19,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, dict }) => {
               <div className="footer-logo-badge">
                 <Image
                   src="/images/logo-icon.png"
-                  alt="Kopuram Logo"
+                  alt="Kopuram Promoter & Builders Logo"
                   width={48}
                   height={48}
                   className="h-full w-auto object-contain"
@@ -37,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, dict }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon-btn instagram"
-                title="Follow us on Instagram"
+                title="Follow Kopuram Builders on Instagram"
               >
                 <Instagram className="w-4 h-4" />
               </a>
@@ -46,11 +46,11 @@ export const Footer: React.FC<FooterProps> = ({ lang, dict }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon-btn whatsapp"
-                title="Chat on WhatsApp"
+                title="Chat with Kopuram Builders on WhatsApp"
               >
                 <MessageCircle className="w-4 h-4" />
               </a>
-              <a href="tel:+918681851548" className="social-icon-btn" title="Call Us">
+              <a href="tel:+918681851548" className="social-icon-btn" title="Call Kopuram Builders">
                 <Phone className="w-4 h-4" />
               </a>
             </div>
@@ -64,8 +64,19 @@ export const Footer: React.FC<FooterProps> = ({ lang, dict }) => {
               <li><Link href={`/${lang}/projects`}>{dict.nav_projects}</Link></li>
               <li><Link href={`/${lang}/testimonials`}>{dict.nav_testimonials}</Link></li>
               <li><Link href={`/${lang}/contact`}>{dict.nav_contact}</Link></li>
-              <li><Link href={`/${lang}/terms`}>{dict.nav_terms}</Link></li>
               <li><Link href={`/${lang}/privacy`}>{dict.nav_privacy}</Link></li>
+              <li><Link href={`/${lang}/terms`}>{dict.nav_terms}</Link></li>
+            </ul>
+          </div>
+
+          <div className="footer-col">
+            <h4>Featured Layouts</h4>
+            <ul className="footer-links">
+              <li><Link href={`/${lang}/projects`}>Kopuram Nagar Phase 2</Link></li>
+              <li><Link href={`/${lang}/projects`}>Sangatamil Nagar Phase III</Link></li>
+              <li><Link href={`/${lang}/projects`}>Kopuram Diamond City</Link></li>
+              <li><Link href={`/${lang}/contact`}>Anna Nagar Office</Link></li>
+              <li><Link href={`/${lang}/contact`}>Book Free Site Visit</Link></li>
             </ul>
           </div>
 
@@ -95,6 +106,11 @@ export const Footer: React.FC<FooterProps> = ({ lang, dict }) => {
         </div>
 
         <div className="pt-6 border-t border-slate-800 text-center space-y-2">
+          <div className="flex justify-center gap-4 text-xs text-slate-400 mb-2">
+            <Link href="/en" className="hover:underline">English Version</Link>
+            <span>•</span>
+            <Link href="/ta" className="hover:underline">தமிழ் பதிப்பு</Link>
+          </div>
           <p className="text-sm text-slate-400">{dict.footer_rights}</p>
           <p className="text-xs text-slate-500">{dict.footer_legal_notice}</p>
         </div>
