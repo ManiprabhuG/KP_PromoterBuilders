@@ -2,11 +2,11 @@
   "/_not-found/page": "app/_not-found/page.js",
   "/robots.txt/route": "app/robots.txt/route.js",
   "/sitemap.xml/route": "app/sitemap.xml/route.js",
-  "/[lang]/page": "app/[lang]/page.js",
   "/[lang]/contact/page": "app/[lang]/contact/page.js",
+  "/[lang]/about/page": "app/[lang]/about/page.js",
+  "/[lang]/page": "app/[lang]/page.js",
   "/[lang]/privacy/page": "app/[lang]/privacy/page.js",
   "/[lang]/projects/page": "app/[lang]/projects/page.js",
   "/[lang]/terms/page": "app/[lang]/terms/page.js",
-  "/[lang]/testimonials/page": "app/[lang]/testimonials/page.js",
-  "/[lang]/about/page": "app/[lang]/about/page.js"
+  "/[lang]/testimonials/page": "app/[lang]/testimonials/page.js"
 }

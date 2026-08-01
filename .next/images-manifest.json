@@ -2,6 +2,8 @@
   "version": 1,
   "images": {
     "deviceSizes": [
+      360,
+      480,
       640,
       750,
       828,
@@ -24,7 +26,7 @@
     "loaderFile": "",
     "domains": [],
     "disableStaticImages": false,
-    "minimumCacheTTL": 60,
+    "minimumCacheTTL": 31536000,
     "formats": [
       "image/avif",
       "image/webp"
@@ -36,6 +38,8 @@
     "remotePatterns": [],
     "unoptimized": false,
     "sizes": [
+      360,
+      480,
       640,
       750,
       828,

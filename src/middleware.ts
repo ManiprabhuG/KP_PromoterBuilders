@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server';
 import { i18nConfig } from '@/i18n/config';
 
 export function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname;
+  let pathname = request.nextUrl.pathname;
 
   // Ignore static assets, public folder images, and API routes
   if (
@@ -30,9 +30,12 @@ export function middleware(request: NextRequest) {
     ? savedLocale
     : i18nConfig.defaultLocale;
 
-  // Redirect to localized URL
-  const newUrl = new URL(`/${targetLocale}${pathname}`, request.url);
-  return NextResponse.redirect(newUrl);
+  // Clean path to prevent trailing slash redirect chaining
+  const cleanPath = pathname === '/' ? '' : pathname.replace(/\/$/, '');
+
+  // Redirect directly to localized URL (1-step redirect)
+  const newUrl = new URL(`/${targetLocale}${cleanPath}`, request.url);
+  return NextResponse.redirect(newUrl, 301);
 }
 
 export const config = {
