@@ -1,0 +1,80 @@
+{
+  "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_app": {
+    "id": 5139,
+    "files": [
+      "static/chunks/139.7a5a8e93a21948c1.js"
+    ]
+  },
+  "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_error": {
+    "id": 1646,
+    "files": [
+      "static/chunks/646.f342b7cffc01feb0.js"
+    ]
+  },
+  "app\\[lang]\\about\\page.tsx -> @/i18n/dictionaries/en.json": {
+    "id": 2653,
+    "files": [
+      "static/chunks/653.4637c022d1ec8188.js"
+    ]
+  },
+  "app\\[lang]\\about\\page.tsx -> @/i18n/dictionaries/ta.json": {
+    "id": 773,
+    "files": [
+      "static/chunks/773.e04c91d90aa13233.js"
+    ]
+  },
+  "app\\[lang]\\contact\\page.tsx -> @/i18n/dictionaries/en.json": {
+    "id": 2653,
+    "files": [
+      "static/chunks/653.4637c022d1ec8188.js"
+    ]
+  },
+  "app\\[lang]\\contact\\page.tsx -> @/i18n/dictionaries/ta.json": {
+    "id": 773,
+    "files": [
+      "static/chunks/773.e04c91d90aa13233.js"
+    ]
+  },
+  "app\\[lang]\\page.tsx -> @/i18n/dictionaries/en.json": {
+    "id": 2653,
+    "files": [
+      "static/chunks/653.4637c022d1ec8188.js"
+    ]
+  },
+  "app\\[lang]\\page.tsx -> @/i18n/dictionaries/ta.json": {
+    "id": 773,
+    "files": [
+      "static/chunks/773.e04c91d90aa13233.js"
+    ]
+  },
+  "app\\[lang]\\projects\\page.tsx -> @/i18n/dictionaries/en.json": {
+    "id": 2653,
+    "files": [
+      "static/chunks/653.4637c022d1ec8188.js"
+    ]
+  },
+  "app\\[lang]\\projects\\page.tsx -> @/i18n/dictionaries/ta.json": {
+    "id": 773,
+    "files": [
+      "static/chunks/773.e04c91d90aa13233.js"
+    ]
+  },
+  "app\\[lang]\\testimonials\\page.tsx -> @/i18n/dictionaries/en.json": {
+    "id": 2653,
+    "files": [
+      "static/chunks/653.4637c022d1ec8188.js"
+    ]
+  },
+  "app\\[lang]\\testimonials\\page.tsx -> @/i18n/dictionaries/ta.json": {
+    "id": 773,
+    "files": [
+      "static/chunks/773.e04c91d90aa13233.js"
+    ]
+  },
+  "components\\contact\\OfficeMap.tsx -> leaflet": {
+    "id": 5027,
+    "files": [
+      "static/chunks/d0deef33.cac6acee3fffe7af.js"
+    ]
+  }
+}
