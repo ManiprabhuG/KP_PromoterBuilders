@@ -1125,3 +1125,13 @@ a {
     border-bottom: none;
   }
 }
+
+@media (max-width: 450px) {
+  .top-bar {
+    display: none !important;
+  }
+  .nav-book-btn {
+    display: none !important;
+  }
+}
+

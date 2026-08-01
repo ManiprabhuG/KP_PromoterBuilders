@@ -70,7 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="nav-actions">
           <button
             type="button"
-            className="btn btn-primary btn-sm hidden sm:inline-flex"
+            className="btn btn-primary btn-sm nav-book-btn hidden sm:inline-flex"
             onClick={() => onOpenBookingModal()}
           >
             <Calendar className="w-4 h-4" />
