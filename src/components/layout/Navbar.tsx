@@ -3,9 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname, useRouter } from 'next/navigation';
-import { useTheme } from 'next-themes';
-import { Moon, Sun, Menu, X, Calendar } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { Menu, X, Calendar } from 'lucide-react';
 import type { Locale } from '@/types';
 
 interface NavbarProps {
@@ -21,25 +20,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
-  const { theme, setTheme } = useTheme();
-
-  const handleLanguageSwitch = (targetLang: Locale) => {
-    if (targetLang === lang) return;
-    // Store in cookie and localStorage
-    document.cookie = `kp_lang=${targetLang}; path=/; max-age=31536000`;
-    localStorage.setItem('kp_lang', targetLang);
-
-    // Replace locale in current path
-    const segments = pathname.split('/');
-    if (segments[1] === 'en' || segments[1] === 'ta') {
-      segments[1] = targetLang;
-    } else {
-      segments.unshift(targetLang);
-    }
-    const newPath = segments.join('/') || `/${targetLang}`;
-    router.push(newPath);
-  };
 
   const navLinks = [
     { href: `/${lang}`, label: dict.nav_home, key: 'home' },
@@ -88,36 +68,6 @@ export const Navbar: React.FC<NavbarProps> = ({
         </nav>
 
         <div className="nav-actions">
-          <div className="lang-switcher" title="Switch Language">
-            <button
-              type="button"
-              className={`lang-btn ${lang === 'en' ? 'active' : ''}`}
-              onClick={() => handleLanguageSwitch('en')}
-            >
-              EN
-            </button>
-            <button
-              type="button"
-              className={`lang-btn ${lang === 'ta' ? 'active' : ''}`}
-              onClick={() => handleLanguageSwitch('ta')}
-            >
-              தமிழ்
-            </button>
-          </div>
-
-          <button
-            type="button"
-            className="theme-toggle"
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            title="Toggle Theme"
-          >
-            {theme === 'dark' ? (
-              <Sun className="w-4 h-4 text-amber-400" />
-            ) : (
-              <Moon className="w-4 h-4 text-slate-700 dark:text-slate-200" />
-            )}
-          </button>
-
           <button
             type="button"
             className="btn btn-primary btn-sm hidden sm:inline-flex"

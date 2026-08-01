@@ -2,11 +2,11 @@
   "/_not-found/page": "/_not-found",
   "/robots.txt/route": "/robots.txt",
   "/sitemap.xml/route": "/sitemap.xml",
-  "/[lang]/page": "/[lang]",
   "/[lang]/about/page": "/[lang]/about",
+  "/[lang]/page": "/[lang]",
   "/[lang]/contact/page": "/[lang]/contact",
-  "/[lang]/privacy/page": "/[lang]/privacy",
   "/[lang]/projects/page": "/[lang]/projects",
+  "/[lang]/privacy/page": "/[lang]/privacy",
   "/[lang]/terms/page": "/[lang]/terms",
   "/[lang]/testimonials/page": "/[lang]/testimonials"
 }

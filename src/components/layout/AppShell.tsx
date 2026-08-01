@@ -64,7 +64,7 @@ export const AppShell: React.FC<AppShellProps> = ({ children, lang, dict }) => {
 
         <Footer lang={lang} dict={dict} />
         <MobileCallBar onOpenBookingModal={() => handleOpenBookingModal()} />
-        <FloatingButtons />
+        <FloatingButtons lang={lang} />
 
         <BookingModal
           isOpen={bookingModalOpen}
